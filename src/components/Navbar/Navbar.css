@@ -1,0 +1,57 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 4rem;
+  z-index: 100;
+  mix-blend-mode: normal;
+  /* Optional: subtle readability gradient at the top of the body/hero to make nav readable */
+}
+
+.navbar-brand {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--color-ivory); /* Using ivory to stand out against video */
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 3rem;
+  background: rgba(8, 8, 8, 0.3); /* Lighter brand dark with transparency */
+  padding: 0.8rem 1.8rem;
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-links a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--color-ivory);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 1.5rem;
+  }
+  .navbar-links {
+    display: none; /* Minimal on mobile for now */
+  }
+}

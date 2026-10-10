@@ -1,0 +1,987 @@
+/* =========================================================
+   FEATURED PROJECT — CINEMATIC 3D SCENE
+========================================================= */
+
+.featured-reveal-section {
+  position: relative;
+  width: 100%;
+
+  /*
+    IMPORTANT:
+    This is the actual scroll track.
+    The scene itself remains 100vh.
+  */
+  height: 500vh;
+
+  background: var(--color-stone, #EAE8E0);
+
+  overflow: clip;
+}
+
+
+/* =========================================================
+   MAIN CAMERA
+========================================================= */
+
+.featured-reveal-container {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1800px;
+
+  transform-style: preserve-3d;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(8, 8, 8, 0.10),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      var(--color-stone, #EAE8E0),
+      #d6d1c6
+    );
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   ARCHITECTURAL GRID
+========================================================= */
+
+.architectural-grid {
+  position: absolute;
+
+  width: 150vw;
+  height: 150vh;
+
+  left: -25vw;
+  top: -25vh;
+
+  z-index: 1;
+
+  transform-style: preserve-3d;
+
+  opacity: 0.65;
+
+  pointer-events: none;
+
+  will-change: transform;
+}
+
+.grid-line {
+  position: absolute;
+
+  background: rgba(8, 8, 8, 0.10);
+}
+
+.grid-line.horizontal {
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.grid-line.vertical {
+  top: 0;
+  height: 100%;
+  width: 1px;
+}
+
+.h1 {
+  top: 20%;
+}
+
+.h2 {
+  top: 50%;
+}
+
+.h3 {
+  top: 80%;
+}
+
+.v1 {
+  left: 20%;
+}
+
+.v2 {
+  left: 50%;
+}
+
+.v3 {
+  left: 80%;
+}
+
+
+/* =========================================================
+   ARCHITECTURAL RADAR / CAMERA RINGS
+========================================================= */
+
+.architectural-ring {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(8, 8, 8, 0.12);
+
+  transform-style: preserve-3d;
+
+  pointer-events: none;
+
+  z-index: 2;
+
+  will-change: transform, opacity;
+}
+
+.ring-one {
+  width: 30vw;
+  height: 30vw;
+
+  margin-left: -15vw;
+  margin-top: -15vw;
+}
+
+.ring-two {
+  width: 55vw;
+  height: 55vw;
+
+  margin-left: -27.5vw;
+  margin-top: -27.5vw;
+}
+
+.ring-three {
+  width: 85vw;
+  height: 85vw;
+
+  margin-left: -42.5vw;
+  margin-top: -42.5vw;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.featured-intro {
+  position: absolute;
+  top: 17%;
+  left: 6%;
+  z-index: 30;
+  pointer-events: none;
+
+  transform-style: preserve-3d;
+
+  will-change: transform, opacity;
+}
+
+.featured-label {
+  font-family: var(--font-sans);
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.28em;
+
+  font-weight: 600;
+
+  color: var(--color-neutral, #BDBBB3);
+
+  margin-bottom: 2rem;
+
+  text-transform: uppercase;
+}
+
+.featured-huge-headline {
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    3.5rem,
+    6.4vw,
+    7rem
+  );
+
+  line-height: 0.92;
+
+  letter-spacing: -0.035em;
+
+  font-weight: 400;
+
+  color: var(--color-green, #080808);
+
+  margin: 0;
+
+  text-transform: uppercase;
+
+  max-width: 650px;
+
+  transform-style: preserve-3d;
+}
+
+.intro-coordinate {
+  margin-top: 35px;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.48rem;
+
+  letter-spacing: 0.25em;
+
+  color: rgba(8, 8, 8, 0.45);
+}
+
+
+/* =========================================================
+   IMAGE PLANES
+========================================================= */
+
+.panels-wrapper {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 20;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform-style: preserve-3d;
+
+  perspective: 1800px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BASE PANEL
+========================================================= */
+
+.panel {
+  position: absolute;
+
+  overflow: hidden;
+
+  background: #111;
+
+  transform-style: preserve-3d;
+
+  backface-visibility: hidden;
+
+  will-change:
+    transform,
+    width,
+    height,
+    opacity;
+
+  box-shadow:
+    0 50px 100px rgba(0, 0, 0, 0.22),
+    0 10px 30px rgba(8, 8, 8, 0.12);
+}
+
+
+/* =========================================================
+   DESKTOP PANEL POSITIONS
+========================================================= */
+
+.panel-1 {
+  width: 18vw;
+  height: 64vh;
+
+  left: 40vw;
+  top: 18vh;
+
+  z-index: 22;
+}
+
+.panel-2 {
+  width: 20vw;
+  height: 70vh;
+
+  left: 50%;
+  top: 15vh;
+
+  margin-left: -10vw;
+
+  z-index: 24;
+}
+
+.panel-3 {
+  width: 18vw;
+  height: 64vh;
+
+  left: 42vw;
+  top: 18vh;
+
+  z-index: 21;
+}
+
+
+/* =========================================================
+   PANEL IMAGES
+========================================================= */
+
+.panel-img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  will-change: transform;
+
+  backface-visibility: hidden;
+}
+
+.panel-img-1 {
+  object-position: 25% 50%;
+}
+
+.panel-img-2 {
+  object-position: 50% 50%;
+}
+
+.panel-img-3 {
+  object-position: 75% 50%;
+}
+
+
+/* =========================================================
+   3D DEPTH EDGES
+========================================================= */
+
+.panel-depth {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+.depth-left {
+  box-shadow:
+    inset -35px 0 50px rgba(0, 0, 0, 0.28),
+    inset 0 0 40px rgba(0, 0, 0, 0.18);
+}
+
+.depth-center {
+  box-shadow:
+    inset 0 0 60px rgba(0, 0, 0, 0.25);
+}
+
+.depth-right {
+  box-shadow:
+    inset 35px 0 50px rgba(0, 0, 0, 0.28),
+    inset 0 0 40px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   SCAN EFFECT
+========================================================= */
+
+.panel-scan {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 5px,
+      rgba(255,255,255,0.025) 6px
+    );
+
+  mix-blend-mode: overlay;
+}
+
+
+/* =========================================================
+   PANEL NUMBERS
+========================================================= */
+
+.panel-number {
+  position: absolute;
+
+  bottom: 18px;
+  left: 18px;
+
+  z-index: 5;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.45rem;
+
+  letter-spacing: 0.22em;
+
+  color: rgba(255,255,255,0.65);
+}
+
+
+/* =========================================================
+   CENTER PROJECT CONTENT
+========================================================= */
+
+.project-reveal-content {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+  color: var(--color-ivory, #F7F6F1);
+  padding: 6vh 6vw;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 40%);
+  pointer-events: auto;
+  transform-style: preserve-3d;
+}
+
+
+
+
+
+.reveal-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 400;
+  margin: 0 0 1rem;
+  letter-spacing: -0.025em;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.reveal-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  will-change: transform, opacity;
+}
+
+.reveal-description {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 450px;
+  margin-bottom: 2rem;
+  color: rgba(247, 246, 241,0.9);
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.reveal-cta {
+  font-family: var(--font-sans);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.2em;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  color: var(--color-ivory, #F7F6F1);
+
+  text-decoration: none;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  position: relative;
+
+  padding-bottom: 7px;
+}
+
+.reveal-cta::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(247, 246, 241,0.65);
+
+  transform: scaleX(0);
+
+  transform-origin: right;
+
+  transition:
+    transform 0.5s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.reveal-cta:hover::after {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+
+.reveal-cta .arrow {
+  margin-left: 0.75rem;
+
+  transition:
+    transform 0.4s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.reveal-cta:hover .arrow {
+  transform: translateX(8px);
+}
+
+
+
+
+
+/* =========================================================
+   COORDINATES
+========================================================= */
+
+.coordinate-system {
+  position: absolute;
+
+  right: 5vw;
+  top: 12vh;
+
+  z-index: 40;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  opacity: 0;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.43rem;
+
+  letter-spacing: 0.18em;
+
+  color: rgba(8, 8, 8,0.5);
+}
+
+
+/* =========================================================
+   VERTICAL LABEL
+========================================================= */
+
+.vertical-project-label {
+  position: absolute;
+
+  left: 3vw;
+  bottom: 7vh;
+
+  z-index: 40;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  writing-mode: vertical-rl;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.42rem;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(8, 8, 8,0.48);
+
+  opacity: 0;
+}
+
+.vertical-project-label i {
+  display: block;
+
+  width: 1px;
+  height: 45px;
+
+  background: rgba(8, 8, 8,0.25);
+}
+
+
+/* =========================================================
+   CAMERA CROSSHAIR
+========================================================= */
+
+.camera-crosshair {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 35px;
+  height: 35px;
+
+  margin-left: -17.5px;
+  margin-top: -17.5px;
+
+  z-index: 50;
+
+  opacity: 0.3;
+
+  pointer-events: none;
+}
+
+.camera-crosshair span {
+  position: absolute;
+
+  background: rgba(247, 246, 241,0.65);
+}
+
+.camera-crosshair span:nth-child(1) {
+  left: 0;
+  top: 50%;
+
+  width: 100%;
+  height: 1px;
+}
+
+.camera-crosshair span:nth-child(2) {
+  left: 50%;
+  top: 0;
+
+  width: 1px;
+  height: 100%;
+}
+
+.camera-crosshair span:nth-child(3) {
+  left: 0;
+  top: 0;
+
+  width: 7px;
+  height: 1px;
+}
+
+.camera-crosshair span:nth-child(4) {
+  right: 0;
+  bottom: 0;
+
+  width: 7px;
+  height: 1px;
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+.scene-progress-line {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  z-index: 100;
+
+  background: rgba(8, 8, 8,0.1);
+}
+
+.scene-progress-line span {
+  display: block;
+
+  width: 18%;
+
+  height: 100%;
+
+  background: var(--color-green, #080808);
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 769px) {
+
+  .panel-1 {
+    width: 17vw;
+    height: 62vh;
+
+    left: 42vw;
+    top: 19vh;
+  }
+
+  .panel-2 {
+    width: 21vw;
+    height: 72vh;
+
+    left: 50%;
+    top: 14vh;
+
+    margin-left: -10.5vw;
+  }
+
+  .panel-3 {
+    width: 17vw;
+    height: 62vh;
+
+    left: 41vw;
+    top: 19vh;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) and (min-width: 769px) {
+
+  .featured-intro {
+    left: 4vw;
+  }
+
+  .featured-huge-headline {
+    font-size: 5.5vw;
+  }
+
+  .panel-1 {
+    width: 20vw;
+  }
+
+  .panel-2 {
+    width: 26vw;
+    margin-left: -13vw;
+  }
+
+  .panel-3 {
+    width: 20vw;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .featured-reveal-section {
+    height: 100vh;
+  }
+
+  .featured-reveal-container {
+    perspective: 1200px;
+  }
+
+  .featured-intro {
+    top: 8%;
+    left: 7%;
+    right: 7%;
+  }
+
+  .featured-label {
+    font-size: 0.58rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .featured-huge-headline {
+    font-size: clamp(
+      2.8rem,
+      12vw,
+      4.4rem
+    );
+
+    line-height: 0.92;
+  }
+
+  .intro-coordinate {
+    margin-top: 20px;
+    font-size: 0.4rem;
+  }
+
+  .panel-1 {
+    width: 72vw;
+    height: 24vh;
+
+    left: 14vw;
+    top: 22vh;
+  }
+
+  .panel-2 {
+    width: 82vw;
+    height: 48vh;
+
+    left: 9vw;
+    top: 30vh;
+
+    margin-left: 0;
+  }
+
+  .panel-3 {
+    width: 72vw;
+    height: 20vh;
+
+    left: 14vw;
+    top: 61vh;
+  }
+
+  .reveal-title {
+    font-size: 12vw;
+
+    margin-bottom: 1.5rem;
+  }
+
+  .reveal-description {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reveal-cta {
+    font-size: 0.55rem;
+  }
+
+  .coordinate-system {
+    right: 5vw;
+    top: 15vh;
+
+    font-size: 0.36rem;
+  }
+
+  .vertical-project-label {
+    left: 3vw;
+    bottom: 4vh;
+
+    font-size: 0.34rem;
+  }
+
+  .architectural-grid {
+    width: 200vw;
+    height: 180vh;
+
+    left: -50vw;
+    top: -40vh;
+  }
+
+  .ring-one {
+    width: 55vw;
+    height: 55vw;
+
+    margin-left: -27.5vw;
+    margin-top: -27.5vw;
+  }
+
+  .ring-two {
+    width: 100vw;
+    height: 100vw;
+
+    margin-left: -50vw;
+    margin-top: -50vw;
+  }
+
+  .ring-three {
+    width: 145vw;
+    height: 145vw;
+
+    margin-left: -72.5vw;
+    margin-top: -72.5vw;
+  }
+
+  .camera-crosshair {
+    width: 25px;
+    height: 25px;
+
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .featured-huge-headline {
+    font-size: 3rem;
+  }
+
+  .panel-2 {
+    height: 46vh;
+  }
+
+  .reveal-title {
+    font-size: 11vw;
+  }
+
+  .coordinate-system {
+    display: none;
+  }
+
+  .vertical-project-label {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .featured-reveal-container,
+  .architectural-grid,
+  .architectural-ring,
+  .panel,
+  .panel-img,
+  .featured-intro,
+  .reveal-title {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,37 @@
+:root {
+  --color-ivory: #F7F6F1;
+  --color-green: #080808;
+  --color-stone: #EAE8E0;
+  --color-neutral: #BDBBB3;
+  --color-parchment: #F2F1EC;
+  --color-dark: #080808;
+  --color-gold: #DC9E1F;
+  
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Manrope', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-green);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

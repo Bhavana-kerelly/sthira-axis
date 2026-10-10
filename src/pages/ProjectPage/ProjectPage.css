@@ -1,0 +1,554 @@
+/* ProjectPage.css */
+
+.project-page {
+  background-color: var(--color-parchment, #F2F1EC);
+  color: var(--color-green, #080808);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+
+/* 1. HERO SECTION */
+.pp-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem;
+  overflow: hidden;
+}
+
+.pp-hero-img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.pp-hero-img-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.15); /* For animation */
+}
+
+.pp-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+}
+
+.pp-hero-content {
+  position: relative;
+  z-index: 1;
+  color: var(--color-ivory, #F7F6F1);
+  max-width: 1200px;
+}
+
+.pp-hero-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.pp-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 400;
+  line-height: 0.9;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-hero-title-line {
+  display: block;
+}
+
+.pp-hero-meta {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+/* 2. PROJECT INTRODUCTION */
+.pp-intro {
+  padding: 10rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-ivory, #F7F6F1);
+}
+
+.pp-intro-container {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.pp-intro-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+  color: var(--color-green, #080808);
+}
+
+.pp-intro-sub {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: rgba(8, 8, 8, 0.6);
+  text-transform: uppercase;
+}
+
+/* 3. THE ADDRESS */
+.pp-address {
+  padding: 8rem 4rem;
+  background-color: var(--color-parchment, #F2F1EC);
+}
+
+.pp-address-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: center;
+}
+
+.pp-section-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: rgba(8, 8, 8, 0.5);
+  margin-bottom: 2rem;
+}
+
+.pp-address-text {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 4rem);
+  line-height: 1.2;
+  margin-bottom: 4rem;
+}
+
+.pp-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--color-green, #080808);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.pp-map-link:hover {
+  opacity: 0.5;
+}
+
+.pp-abstract-map {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: rgba(8, 8, 8, 0.05);
+  border: 1px solid rgba(8, 8, 8, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%; /* Make it abstract circular */
+}
+
+.pp-map-pin {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: var(--color-ivory);
+  background-color: var(--color-green, #080808);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+}
+
+/* 4. EXPERIENCE */
+.pp-experience {
+  background-color: var(--color-ivory, #F7F6F1);
+  padding: 8rem 0;
+}
+
+.pp-exp-block {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.pp-exp-reverse {
+  flex-direction: row-reverse;
+}
+
+.pp-exp-visual {
+  flex: 1.5;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.pp-lake-img-wrapper {
+  width: 120%;
+  height: 100%;
+  position: relative;
+  left: -10%;
+}
+
+.pp-lake-img-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pp-forest-box {
+  width: 100%;
+  height: 100%;
+  background-color: #11110F; /* Deep green representation of forest */
+}
+
+.pp-exp-content {
+  flex: 1;
+  padding: 4rem;
+}
+
+.pp-exp-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.pp-exp-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(8, 8, 8, 0.8);
+  max-width: 400px;
+}
+
+.pp-exp-text-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 8rem 4rem;
+  gap: 4rem;
+  background-color: var(--color-parchment, #F2F1EC);
+}
+
+.pp-footpath-line {
+  margin-top: 2rem;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-green, #080808);
+  transform-origin: left;
+}
+
+/* 5. STATS */
+.pp-stats-section {
+  padding: 8rem 4rem;
+  background-color: var(--color-green, #080808);
+  color: var(--color-ivory);
+}
+
+.pp-stats-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  border-top: 1px solid rgba(247, 246, 241, 0.2);
+  padding-top: 4rem;
+}
+
+.pp-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pp-stat-num {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.pp-stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: rgba(247, 246, 241, 0.5);
+}
+
+/* 6. RESIDENCES */
+.pp-residences {
+  padding: 8rem 4rem;
+  background-color: var(--color-ivory);
+}
+
+.pp-res-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.pp-res-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-weight: 400;
+  margin-bottom: 6rem;
+}
+
+.pp-res-interactive {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+}
+
+.pp-res-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-right: 1px solid rgba(8, 8, 8, 0.1);
+  padding-right: 2rem;
+}
+
+.pp-res-btn {
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(8, 8, 8, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.pp-res-btn.active, .pp-res-btn:hover {
+  color: var(--color-green, #080808);
+}
+
+.pp-res-display {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.pp-res-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.pp-res-data-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pp-res-data-item .label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: rgba(8, 8, 8, 0.5);
+}
+
+.pp-res-data-item .value {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+}
+
+.pp-res-floorplan-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: var(--color-parchment);
+  border: 1px solid rgba(8, 8, 8, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fp-text {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: rgba(8, 8, 8, 0.5);
+}
+
+/* 7. SPECIFICATIONS */
+.pp-specs {
+  padding: 8rem 4rem;
+  background-color: var(--color-parchment);
+}
+
+.pp-specs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pp-specs-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.pp-specs-table {
+  border-top: 1px solid rgba(8, 8, 8, 0.2);
+}
+
+.pp-spec-row {
+  display: flex;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(8, 8, 8, 0.2);
+}
+
+.pp-spec-key {
+  width: 300px;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pp-spec-val {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: rgba(8, 8, 8, 0.8);
+}
+
+/* 8. MATERIALS */
+.pp-materials {
+  padding: 8rem 4rem;
+  background-color: var(--color-ivory);
+}
+
+.pp-materials-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.pp-materials-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-weight: 400;
+  margin-bottom: 6rem;
+}
+
+.pp-mat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.pp-mat-grid span {
+  font-size: 1.1rem;
+  color: rgba(8, 8, 8, 0.8);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(8, 8, 8, 0.1);
+}
+
+/* 9. ENQUIRY CTA */
+.pp-enquiry {
+  padding: 12rem 4rem;
+  background-color: var(--color-green, #080808);
+  color: var(--color-ivory);
+  text-align: center;
+}
+
+.pp-enq-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pp-enq-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.pp-enq-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(247, 246, 241, 0.7);
+  margin-bottom: 4rem;
+}
+
+.pp-enq-contact {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+
+.pp-enq-btn {
+  background-color: transparent;
+  color: var(--color-ivory);
+  border: 1px solid rgba(247, 246, 241, 0.3);
+  padding: 1.5rem 3rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pp-enq-btn:hover {
+  background-color: var(--color-ivory);
+  color: var(--color-green, #080808);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .pp-nav { padding: 1.5rem 2rem; }
+  .pp-nav-links { display: none; }
+  .pp-hero { padding: 2rem; }
+  .pp-intro { padding: 6rem 2rem; }
+  .pp-address, .pp-experience, .pp-stats-section, .pp-residences, .pp-specs, .pp-materials, .pp-enquiry {
+    padding: 6rem 2rem;
+  }
+  .pp-address-grid { grid-template-columns: 1fr; gap: 4rem; }
+  .pp-exp-block { flex-direction: column; height: auto; }
+  .pp-exp-visual, .pp-exp-content { width: 100%; height: auto; }
+  .pp-exp-visual { aspect-ratio: 4/3; margin-bottom: 2rem; }
+  .pp-exp-content { padding: 0; }
+  .pp-stats-grid { grid-template-columns: 1fr 1fr; }
+  .pp-res-interactive { grid-template-columns: 1fr; }
+  .pp-res-selector { border-right: none; border-bottom: 1px solid rgba(8, 8, 8, 0.1); padding-bottom: 2rem; flex-direction: row; flex-wrap: wrap; }
+  .pp-spec-row { flex-direction: column; gap: 1rem; }
+  .pp-mat-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .pp-stats-grid { grid-template-columns: 1fr; }
+  .pp-res-data { grid-template-columns: 1fr; }
+  .pp-enq-contact { flex-direction: column; gap: 1rem; }
+  .pp-mat-grid { grid-template-columns: 1fr; }
+}

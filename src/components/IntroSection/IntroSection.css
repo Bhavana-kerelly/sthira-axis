@@ -1,0 +1,851 @@
+.intro-section-3d {
+  position: relative;
+  width: 100%;
+
+  /*
+    The section is intentionally much taller than the viewport.
+    This gives Framer Motion enough scroll distance to create
+    a cinematic 3D sequence.
+  */
+  height: 300vh;
+
+  background: var(--color-ivory, #F7F6F1);
+
+  color: var(--color-green, #080808);
+
+  overflow: clip;
+
+  perspective: 1800px;
+}
+
+
+/* =========================================================
+   FIXED STAGE
+========================================================= */
+
+.intro-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  background: var(--color-ivory, #F7F6F1);
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.intro-background {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(8, 8, 8, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 8, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   3D FLOOR GRID
+========================================================= */
+
+.architectural-grid {
+  position: absolute;
+
+  width: 150vw;
+  height: 100vh;
+
+  left: -25vw;
+  top: 25vh;
+
+  transform-style: preserve-3d;
+
+  background-image:
+    linear-gradient(
+      rgba(8, 8, 8, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 8, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  transform-origin: center center;
+
+  pointer-events: none;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 25%,
+      transparent 90%
+    );
+}
+
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.intro-label-3d {
+  position: absolute;
+
+  top: 11vh;
+  left: 7vw;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.67rem;
+
+  letter-spacing: 0.25em;
+
+  color: var(--color-neutral, #BDBBB3);
+}
+
+
+.label-line-3d {
+  width: 45px;
+  height: 1px;
+
+  background: var(--color-green, #080808);
+}
+
+
+/* =========================================================
+   HEADLINE
+========================================================= */
+
+.headline-3d-layer {
+  position: absolute;
+
+  left: 7vw;
+  top: 22vh;
+
+  z-index: 12;
+
+  transform-style: preserve-3d;
+
+  transform-origin: left center;
+}
+
+
+.headline-3d-layer h2 {
+  position: relative;
+
+  margin: 0;
+
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    3.5rem,
+    6.5vw,
+    7rem
+  );
+
+  font-weight: 400;
+
+  line-height: 0.87;
+
+  letter-spacing: -0.045em;
+
+  color: var(--color-green, #080808);
+
+  transform: translateZ(80px);
+}
+
+
+.headline-3d-layer h2 span {
+  position: relative;
+}
+
+
+.headline-depth {
+  position: absolute;
+
+  left: 12px;
+  top: 14px;
+
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    3.5rem,
+    6.5vw,
+    7rem
+  );
+
+  line-height: 0.87;
+
+  letter-spacing: -0.045em;
+
+  color: rgba(8, 8, 8,0.08);
+
+  transform: translateZ(-30px);
+}
+
+
+.headline-shadow {
+  position: absolute;
+
+  left: 25px;
+  top: 30px;
+
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    3.5rem,
+    6.5vw,
+    7rem
+  );
+
+  line-height: 0.87;
+
+  letter-spacing: -0.045em;
+
+  color: rgba(8, 8, 8,0.035);
+
+  transform: translateZ(-80px);
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.main-image-3d {
+  position: absolute;
+
+  z-index: 8;
+
+  width: 31vw;
+  max-width: 540px;
+
+  height: 67vh;
+
+  right: 10vw;
+  top: 19vh;
+
+  transform-style: preserve-3d;
+
+  transform-origin: center center;
+}
+
+
+.image-depth-layer {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(8, 8, 8,0.12);
+
+  transform-origin: center;
+}
+
+
+.layer-one {
+  transform:
+    translateZ(-30px)
+    translate(18px, 18px);
+}
+
+
+.layer-two {
+  transform:
+    translateZ(-60px)
+    translate(34px, 34px);
+
+  opacity: 0.4;
+}
+
+
+.image-frame {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  background: #ddd;
+
+  box-shadow:
+    0 50px 100px rgba(8, 8, 8,0.2),
+    0 15px 30px rgba(8, 8, 8,0.1);
+}
+
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.08);
+}
+
+
+.image-dark-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.02),
+      transparent 50%,
+      rgba(8, 8, 8,0.35)
+    );
+}
+
+
+.image-coordinates {
+  position: absolute;
+
+  top: 22px;
+  right: 22px;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.52rem;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.14em;
+
+  color: white;
+
+  text-align: right;
+
+  opacity: 0.8;
+}
+
+
+.image-label {
+  position: absolute;
+
+  left: 24px;
+  bottom: 22px;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.56rem;
+
+  letter-spacing: 0.22em;
+
+  color: white;
+}
+
+
+/* =========================================================
+   IMAGE CORNERS
+========================================================= */
+
+.corner {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  z-index: 4;
+}
+
+
+.corner.top-left {
+  left: 18px;
+  top: 18px;
+
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+}
+
+
+.corner.top-right {
+  right: 18px;
+  top: 18px;
+
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+}
+
+
+.corner.bottom-left {
+  left: 18px;
+  bottom: 18px;
+
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+
+.corner.bottom-right {
+  right: 18px;
+  bottom: 18px;
+
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+
+/* =========================================================
+   SECONDARY IMAGE
+========================================================= */
+
+.secondary-image-3d {
+  position: absolute;
+
+  z-index: 15;
+
+  left: 37vw;
+  top: 57vh;
+
+  width: 17vw;
+  max-width: 290px;
+
+  transform-style: preserve-3d;
+
+  transform-origin: center;
+}
+
+
+.secondary-image-frame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border: 8px solid var(--color-ivory, #F7F6F1);
+
+  box-shadow:
+    0 35px 80px rgba(8, 8, 8,0.2);
+}
+
+
+.secondary-image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 1.2s cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.secondary-image-3d:hover img {
+  transform: scale(1.1);
+}
+
+
+.secondary-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 8, 8,0.1),
+      transparent
+    );
+}
+
+
+.secondary-tag {
+  position: absolute;
+
+  right: -55px;
+  bottom: 15px;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.53rem;
+
+  letter-spacing: 0.18em;
+
+  color: var(--color-neutral, #BDBBB3);
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   COPY
+========================================================= */
+
+.intro-copy-3d {
+  position: absolute;
+
+  z-index: 16;
+
+  width: 31vw;
+  max-width: 540px;
+
+  left: 7vw;
+  top: 65vh;
+
+  transform-style: preserve-3d;
+}
+
+
+.copy-block {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.copy-block p {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: 1.75;
+}
+
+.primary-copy p {
+  font-size: 1.15rem;
+  color: var(--color-green, #080808);
+}
+
+.secondary-copy p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-green, #080808);
+  opacity: 0.8;
+}
+
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.intro-cta-3d {
+  position: absolute;
+
+  z-index: 30;
+
+  left: 7vw;
+  bottom: 9vh;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: var(--color-green, #080808);
+
+  font-family: var(--font-sans);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.2em;
+
+  text-decoration: none;
+}
+
+
+.cta-arrow {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(8, 8, 8,0.4);
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.5s ease,
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+
+.intro-cta-3d:hover .cta-arrow {
+  transform: rotate(-45deg);
+
+  background: var(--color-green, #080808);
+
+  color: var(--color-ivory, #F7F6F1);
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  right: 5vw;
+  bottom: 8vh;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.2em;
+
+  color: var(--color-neutral, #BDBBB3);
+
+  writing-mode: vertical-rl;
+}
+
+
+.scroll-line {
+  width: 1px;
+  height: 55px;
+
+  background: rgba(8, 8, 8,0.2);
+
+  overflow: hidden;
+}
+
+
+.scroll-line div {
+  width: 100%;
+  height: 40%;
+
+  background: var(--color-green, #080808);
+
+  animation:
+    scrollIndicator 1.7s ease-in-out infinite;
+}
+
+
+@keyframes scrollIndicator {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(250%);
+  }
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.scroll-progress {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--color-green, #080808);
+
+  transform-origin: left center;
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .main-image-3d {
+    width: 38vw;
+
+    right: 7vw;
+  }
+
+  .headline-3d-layer {
+    left: 5vw;
+  }
+
+  .secondary-image-3d {
+    left: 30vw;
+  }
+
+  .intro-copy-3d {
+    width: 38vw;
+    left: 5vw;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .intro-section-3d {
+    height: 260vh;
+  }
+
+  .intro-label-3d {
+    top: 8vh;
+    left: 6vw;
+  }
+
+  .headline-3d-layer {
+    left: 6vw;
+    top: 19vh;
+  }
+
+  .headline-3d-layer h2,
+  .headline-depth,
+  .headline-shadow {
+    font-size: clamp(
+      3.3rem,
+      14vw,
+      5.5rem
+    );
+  }
+
+  .main-image-3d {
+    width: 62vw;
+    height: 50vh;
+
+    right: 7vw;
+    top: 52vh;
+  }
+
+  .secondary-image-3d {
+    width: 35vw;
+
+    left: 8vw;
+    top: 75vh;
+  }
+
+  .intro-copy-3d {
+    width: 80vw;
+    left: 6vw;
+    top: 35vh;
+  }
+
+  .primary-copy p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .secondary-copy p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .scroll-indicator {
+    right: 3vw;
+  }
+
+  .intro-cta-3d {
+    left: 6vw;
+    bottom: 6vh;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .intro-section-3d {
+    height: 240vh;
+  }
+
+  .headline-3d-layer {
+    top: 20vh;
+  }
+
+  .headline-3d-layer h2,
+  .headline-depth,
+  .headline-shadow {
+    font-size: 3rem;
+  }
+
+  .main-image-3d {
+    width: 66vw;
+    height: 44vh;
+    top: 52vh;
+  }
+
+  .secondary-image-3d {
+    width: 37vw;
+    top: 72vh;
+  }
+
+  .intro-copy-3d {
+    width: 88vw;
+    top: 36vh;
+    left: 6vw;
+  }
+
+  .intro-copy-3d .secondary-copy {
+    display: block;
+  }
+
+  .intro-cta-3d {
+    font-size: 0.55rem;
+  }
+
+  .architectural-grid {
+    background-size: 45px 45px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-section-3d,
+  .intro-stage,
+  .architectural-grid,
+  .headline-3d-layer,
+  .main-image-3d,
+  .secondary-image-3d {
+    transform: none !important;
+  }
+}

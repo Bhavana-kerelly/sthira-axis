@@ -1,0 +1,900 @@
+
+/* =========================================================
+   APPROACH SECTION
+   ========================================================= */
+
+.approach-section {
+  --approach-dark: var(--color-dark, #080808);
+  --approach-ivory: var(--color-ivory, #F7F6F1);
+  --approach-gold: var(--color-gold, #DC9E1F);
+
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(75, 95, 83, 0.25),
+      transparent 40%
+    ),
+    var(--approach-dark);
+
+  color: var(--approach-ivory);
+
+  perspective: 1800px;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.approach-bg {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -10;
+
+  overflow: hidden;
+}
+
+.approach-bg-img {
+  position: absolute;
+
+  inset: -5%;
+
+  width: 110%;
+  height: 110%;
+
+  object-fit: cover;
+
+  opacity: 0.28;
+
+  filter:
+    grayscale(0.65)
+    contrast(1.2)
+    brightness(0.6);
+
+  transform-origin: center;
+
+  will-change: transform;
+}
+
+.approach-bg-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 26, 23, 0.98) 0%,
+      rgba(20, 26, 23, 0.88) 34%,
+      rgba(20, 26, 23, 0.72) 65%,
+      rgba(20, 26, 23, 0.9) 100%
+    );
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   ARCHITECTURAL GRID
+   ========================================================= */
+
+.approach-grid {
+  position: absolute;
+
+  inset: -20%;
+
+  opacity: 0.11;
+
+  background-image:
+    linear-gradient(
+      rgba(220, 158, 31, 0.35) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(220, 158, 31, 0.35) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    70px 70px,
+    70px 70px;
+
+  transform:
+    perspective(900px)
+    rotateX(62deg)
+    rotateZ(-3deg);
+
+  transform-origin: center;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GLOW
+   ========================================================= */
+
+.approach-glow {
+  position: absolute;
+
+  width: 45vw;
+  height: 45vw;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.approach-glow-one {
+  top: 10%;
+  right: 5%;
+
+  background:
+    rgba(220, 158, 31, 0.055);
+}
+
+.approach-glow-two {
+  bottom: -25%;
+  left: 25%;
+
+  background:
+    rgba(84, 110, 94, 0.08);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.approach-content {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   LEFT — HEADLINE
+   ========================================================= */
+
+.approach-header {
+  position: relative;
+
+  width: 44%;
+
+  padding-left:
+    clamp(2rem, 6vw, 7rem);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  z-index: 30;
+
+  transform-style: preserve-3d;
+
+  will-change: transform;
+}
+
+
+.approach-label {
+  font-family: var(--font-sans);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.28em;
+
+  font-weight: 500;
+
+  color:
+    rgba(247, 246, 241, 0.5);
+
+  margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   HEADLINE
+   ========================================================= */
+
+.approach-headline {
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-family: var(--font-serif);
+
+  font-size:
+    clamp(3.5rem, 6vw, 7rem);
+
+  font-weight: 400;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.045em;
+
+  text-transform: uppercase;
+
+  transform-style: preserve-3d;
+}
+
+.approach-headline span {
+  display: block;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+.approach-headline span:nth-child(2) {
+  margin-left:
+    clamp(2rem, 5vw, 6rem);
+
+  color:
+    rgba(247, 246, 241, 0.7);
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   SUBHEAD
+   ========================================================= */
+
+.approach-subhead {
+  margin:
+    2rem 0 0;
+
+  font-family: var(--font-serif);
+
+  font-size:
+    clamp(1.1rem, 1.5vw, 1.6rem);
+
+  font-style: italic;
+
+  color:
+    rgba(247, 246, 241, 0.55);
+}
+
+
+/* =========================================================
+   SIDE LINE
+   ========================================================= */
+
+.approach-side-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-top: 3rem;
+
+  color:
+    rgba(247, 246, 241, 0.32);
+
+  font-family: var(--font-sans);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.2em;
+}
+
+.approach-side-line span {
+  display: block;
+
+  width: 55px;
+  height: 1px;
+
+  background:
+    var(--approach-gold);
+}
+
+
+/* =========================================================
+   RIGHT — CARD TRACK
+   ========================================================= */
+
+.approach-track-container {
+  position: relative;
+
+  width: 56%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  perspective: 1800px;
+
+  perspective-origin: center center;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      black 7%,
+      black 94%,
+      transparent 100%
+    );
+}
+
+
+.approach-track {
+  display: flex;
+
+  align-items: center;
+
+  height: 100%;
+
+  width: max-content;
+
+  padding:
+    0 6vw 0 2vw;
+
+  gap:
+    clamp(1.3rem, 2.5vw, 2.5rem);
+
+  transform-style: preserve-3d;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   CARD PANEL
+   ========================================================= */
+
+.approach-panel {
+  position: relative;
+
+  flex: 0 0
+    clamp(300px, 25vw, 390px);
+
+  height:
+    clamp(390px, 54vh, 560px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transform-style: preserve-3d;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.approach-card {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  padding:
+    2rem;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(42, 52, 47, 0.92),
+      rgba(24, 30, 27, 0.95)
+    );
+
+  border:
+    1px solid rgba(247, 246, 241, 0.14);
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  transform-style: preserve-3d;
+
+  transition:
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+
+  backdrop-filter:
+    blur(12px);
+}
+
+
+/* CARD GRID */
+
+.approach-card::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.12;
+
+  background-image:
+    linear-gradient(
+      rgba(220, 158, 31, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(220, 158, 31, 0.3) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    45px 45px,
+    45px 45px;
+
+  pointer-events: none;
+}
+
+
+/* CARD GLOW */
+
+.approach-card::after {
+  content: '';
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -100px;
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(220, 158, 31, 0.08);
+
+  filter: blur(55px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.card-number {
+  position: absolute;
+
+  right: 1.5rem;
+  top: 1.3rem;
+
+  font-family: var(--font-sans);
+
+  font-size:
+    clamp(4rem, 7vw, 7rem);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px rgba(247, 246, 241, 0.07);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.card-top {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.ac-title {
+  font-family: var(--font-sans);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.25em;
+
+  font-weight: 600;
+
+  color:
+    var(--approach-ivory);
+}
+
+.card-index {
+  font-family: var(--font-sans);
+
+  font-size: 0.48rem;
+
+  letter-spacing: 0.16em;
+
+  color:
+    rgba(247, 246, 241, 0.35);
+}
+
+
+/* =========================================================
+   GOLD LINE
+   ========================================================= */
+
+.ac-line {
+  position: relative;
+
+  z-index: 5;
+
+  width: 70px;
+  height: 1px;
+
+  margin-top: 2rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--approach-gold),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.ac-desc {
+  position: relative;
+
+  z-index: 5;
+
+  margin: auto 0;
+
+  font-family: var(--font-serif);
+
+  font-size:
+    clamp(1.5rem, 2.2vw, 2.15rem);
+
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
+
+  color:
+    var(--approach-ivory);
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+   ========================================================= */
+
+.card-bottom {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 1rem;
+
+  border-top:
+    1px solid rgba(247, 246, 241, 0.1);
+
+  font-family: var(--font-sans);
+
+  font-size: 0.48rem;
+
+  letter-spacing: 0.2em;
+
+  color:
+    rgba(247, 246, 241, 0.35);
+}
+
+
+/* =========================================================
+   BOTTOM UI
+   ========================================================= */
+
+.approach-bottom {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  z-index: 50;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding:
+    1.2rem
+    clamp(2rem, 6vw, 7rem);
+
+  font-family: var(--font-sans);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.2em;
+
+  color:
+    rgba(247, 246, 241, 0.35);
+}
+
+.approach-scroll {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+}
+
+.approach-scroll b {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border:
+    1px solid rgba(247, 246, 241, 0.15);
+
+  border-radius: 50%;
+
+  color:
+    var(--approach-gold);
+
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.approach-progress {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  height: 2px;
+
+  background:
+    rgba(247, 246, 241, 0.06);
+}
+
+.approach-progress-bar {
+  width: 100%;
+  height: 100%;
+
+  transform:
+    scaleX(0);
+
+  transform-origin: left;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--approach-gold),
+      var(--approach-ivory)
+    );
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .approach-header {
+    width: 40%;
+
+    padding-left: 3rem;
+  }
+
+  .approach-track-container {
+    width: 60%;
+  }
+
+  .approach-panel {
+    flex-basis: 300px;
+    height: 48vh;
+  }
+
+  .approach-card {
+    padding: 1.5rem;
+  }
+
+  .ac-desc {
+    font-size: 1.55rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .approach-section {
+    min-height: 680px;
+  }
+
+  .approach-content {
+    display: block;
+  }
+
+  /*
+   * LEFT/MIDDLE HEADLINE
+   */
+
+  .approach-header {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 43%;
+
+    padding:
+      6rem 1.25rem 1rem;
+
+    justify-content: flex-start;
+  }
+
+  .approach-headline {
+    font-size:
+      clamp(3rem, 14vw, 4.5rem);
+  }
+
+  .approach-headline span:nth-child(2) {
+    margin-left: 2rem;
+  }
+
+  .approach-subhead {
+    margin-top: 1.2rem;
+
+    font-size: 1rem;
+  }
+
+  .approach-side-line {
+    display: none;
+  }
+
+  /*
+   * RIGHT/MIDDLE CARDS
+   */
+
+  .approach-track-container {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 58%;
+
+    align-items: center;
+
+    mask-image:
+      linear-gradient(
+        90deg,
+        transparent,
+        black 5%,
+        black 95%,
+        transparent
+      );
+  }
+
+  .approach-track {
+    padding-left: 1.25rem;
+
+    gap: 1rem;
+  }
+
+  .approach-panel {
+    flex-basis: 78vw;
+
+    height: 45vh;
+  }
+
+  .approach-card {
+    padding: 1.5rem;
+  }
+
+  .ac-desc {
+    font-size: 1.55rem;
+  }
+
+  .card-number {
+    font-size: 5rem;
+  }
+
+  .approach-bottom {
+    display: none;
+  }
+
+  .approach-grid {
+    opacity: 0.06;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .approach-card {
+    transition: none;
+  }
+}
