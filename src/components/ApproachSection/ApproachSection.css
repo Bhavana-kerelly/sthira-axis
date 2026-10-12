@@ -4,9 +4,9 @@
    ========================================================= */
 
 .approach-section {
-  --approach-dark: var(--color-dark, #080808);
-  --approach-ivory: var(--color-ivory, #F7F6F1);
-  --approach-gold: var(--color-gold, #DC9E1F);
+  --approach-dark: #14221C; /* Brand deep forest dark green instead of pure black */
+  --approach-ivory: var(--color-ivory, #F8F9F5);
+  --approach-gold: #C4A747;
 
   position: relative;
 
@@ -19,10 +19,10 @@
   background:
     radial-gradient(
       circle at 75% 50%,
-      rgba(75, 95, 83, 0.25),
-      transparent 40%
+      rgba(98, 123, 67, 0.22),
+      transparent 45%
     ),
-    var(--approach-dark);
+    #14221C;
 
   color: var(--approach-ivory);
 
@@ -76,10 +76,10 @@
   background:
     linear-gradient(
       90deg,
-      rgba(20, 26, 23, 0.98) 0%,
-      rgba(20, 26, 23, 0.88) 34%,
-      rgba(20, 26, 23, 0.72) 65%,
-      rgba(20, 26, 23, 0.9) 100%
+      rgba(20, 34, 28, 0.98) 0%,
+      rgba(20, 34, 28, 0.90) 34%,
+      rgba(26, 44, 36, 0.82) 65%,
+      rgba(20, 34, 28, 0.94) 100%
     );
 
   z-index: 2;
@@ -426,12 +426,12 @@
   background:
     linear-gradient(
       145deg,
-      rgba(42, 52, 47, 0.92),
-      rgba(24, 30, 27, 0.95)
+      rgba(26, 46, 38, 0.95),
+      rgba(18, 32, 26, 0.97)
     );
 
   border:
-    1px solid rgba(247, 246, 241, 0.14);
+    1px solid rgba(196, 204, 84, 0.22);
 
   box-shadow:
     0 35px 80px rgba(0, 0, 0, 0.38),

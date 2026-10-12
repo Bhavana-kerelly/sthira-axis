@@ -1,11 +1,13 @@
 :root {
-  --color-ivory: #F7F6F1;
-  --color-green: #080808;
-  --color-stone: #EAE8E0;
-  --color-neutral: #BDBBB3;
-  --color-parchment: #F2F1EC;
-  --color-dark: #080808;
-  --color-gold: #DC9E1F;
+  --color-ivory: #F8F9F5;
+  --color-green: #203F38;
+  --color-stone: #EFF2EB;
+  --color-neutral: #8A968D;
+  --color-parchment: #F1F4EE;
+  --color-dark: #14221C;
+  --color-gold: #C4A747;
+  --color-accent-green: #627B43;
+  --color-card-dark: #1D3129;
   
   --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Manrope', sans-serif;

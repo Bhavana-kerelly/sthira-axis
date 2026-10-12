@@ -4,8 +4,8 @@
   width: 100%;
   min-height: 60vh; /* Reduced from 85vh */
   padding: 5rem 4rem 2rem 4rem; /* Reduced top padding from 8rem */
-  background-color: #080808; /* Deep black */
-  color: var(--color-ivory, #F7F6F1); /* Warm ivory */
+  background-color: #14221C; /* Brand deep forest dark green matching inner pages */
+  color: var(--color-ivory, #F8F9F5); /* Warm ivory */
   position: relative;
   overflow: hidden;
   display: flex;
@@ -21,7 +21,7 @@
   font-family: var(--font-serif);
   font-size: clamp(20rem, 35vw, 600px);
   font-weight: 400;
-  color: #1A1916; /* Very subtle tonal variation of background */
+  color: #1D3129; /* Harmonious forest green watermark */
   z-index: 0;
   white-space: nowrap;
   pointer-events: none;

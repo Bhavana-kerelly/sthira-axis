@@ -3,9 +3,9 @@
    ========================================================= */
 
 .portfolio-section {
-  --dark: var(--color-dark, #080808);
-  --ivory: var(--color-ivory, #F7F6F1);
-  --gold: var(--color-gold, #DC9E1F);
+  --dark: #14221C; /* Brand dark forest green instead of pure black */
+  --ivory: var(--color-ivory, #F8F9F5);
+  --gold: #C4A747;
 
   position: relative;
 
@@ -18,10 +18,10 @@
   background:
     radial-gradient(
       circle at 65% 48%,
-      rgba(17, 17, 15, 0.35),
-      transparent 42%
+      rgba(30, 50, 42, 0.45),
+      transparent 45%
     ),
-    #080808;
+    #14221C;
 
   color: var(--ivory);
 
@@ -54,8 +54,8 @@
     radial-gradient(
       ellipse at center,
       transparent 25%,
-      rgba(8, 8, 8, 0.45) 75%,
-      rgba(8, 8, 8, 0.92) 100%
+      rgba(20, 34, 28, 0.45) 75%,
+      rgba(20, 34, 28, 0.95) 100%
     );
 
   z-index: 5;
