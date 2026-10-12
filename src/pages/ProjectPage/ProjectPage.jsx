@@ -20,6 +20,62 @@ const ProjectPage = () => {
     'TYPE C': { area: '2,150 Sq. Ft.', config: '3 BHK', facing: 'East', plinth: '1,680 Sft', common: '470 Sft' }
   };
 
+  // Section 04 Gallery State
+  const galleryImages = [
+    {
+      id: 1,
+      src: '/images/uma_lakeshore.jpg',
+      alt: 'Uma Sreenivas Lakeshore - Waterfront Luxury Residences',
+      title: 'Waterfront Residences'
+    },
+    {
+      id: 2,
+      src: '/images/project_gallery_1.jpg',
+      alt: 'Uma Sreenivas Lakeshore - Balcony Terrace with sunset view',
+      title: 'Balcony Terrace'
+    },
+    {
+      id: 3,
+      src: '/images/about_hero_pool.jpg',
+      alt: 'Uma Sreenivas Lakeshore - Landscaped Clubhouse and Amenities Pool',
+      title: 'Landscaped Amenities & Pool'
+    },
+    {
+      id: 4,
+      src: '/images/architecture_editorial.jpg',
+      alt: 'Uma Sreenivas Lakeshore - Architectural Facade Details',
+      title: 'Architectural Details'
+    },
+    {
+      id: 5,
+      src: '/images/project_wide.jpg',
+      alt: 'Uma Sreenivas Lakeshore - Scenic Master View',
+      title: 'Scenic Panorama'
+    }
+  ];
+
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImg, setLightboxImg] = useState(null);
+
+  const handlePrevGallery = () => {
+    setActiveGalleryIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  };
+
+  const handleNextGallery = () => {
+    setActiveGalleryIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+  };
+
+  const openLightbox = (imgSrc) => {
+    setLightboxImg(imgSrc);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setLightboxImg(null);
+  };
+
   useLayoutEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
@@ -41,34 +97,6 @@ const ProjectPage = () => {
         { opacity: 1, duration: 1 },
         '-=0.5'
       );
-
-      // 2. Lake Story Horizontal Parallax
-      gsap.fromTo('.pp-lake-img-inner',
-        { x: '-10%' },
-        { 
-          x: '10%',
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '.pp-lake-section',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-          }
-        }
-      );
-
-      // 3. Stats Fade Up
-      gsap.fromTo('.pp-stat-item',
-        { opacity: 0, y: 30 },
-        { 
-          opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: 'power2.out',
-          scrollTrigger: {
-            trigger: '.pp-stats-section',
-            start: 'top 75%'
-          }
-        }
-      );
-
     }, containerRef);
 
     return () => ctx.revert();
@@ -96,271 +124,695 @@ const ProjectPage = () => {
         </div>
       </section>
 
-      {/* 2. PROJECT INTRODUCTION */}
-      <section className="pp-intro">
-        <div className="pp-intro-container">
-          <h2 className="pp-intro-statement">
-            A landmark residential development on RV Panchajanya Road, Kondapur — where every window frames a story of water, trees, and sky.
-          </h2>
-          <p className="pp-intro-sub">
-            Designed for those who refuse to compromise on what surrounds them.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. THE ADDRESS */}
-      <section className="pp-address">
-        <div className="pp-address-grid">
-          <div className="pp-address-info">
-            <h3 className="pp-section-label">THE ADDRESS</h3>
-            <div className="pp-address-text">
-              RV Panchajanya Road,<br/>
-              Masjid Banda,<br/>
-              Kondapur,<br/>
-              Hyderabad
-            </div>
-            <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="pp-map-link">
-              VIEW ON GOOGLE MAPS <ArrowUpRight size={14} />
-            </a>
-          </div>
-          <div className="pp-address-visual">
-             {/* Using styling to create an abstract map/location feel */}
-             <div className="pp-abstract-map">
-                <div className="pp-map-pin">PROJECT CENTER</div>
-             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. EXPERIENCE: LAKE / FOREST / TRAFFIC */}
-      <section className="pp-experience" id="experience">
-        
-        {/* LAKE */}
-        <div className="pp-exp-block pp-lake-section">
-          <div className="pp-exp-visual">
-            <div className="pp-lake-img-wrapper">
-              <img src="/images/uma_sreenivas_lakeshore.jpg" alt="Lake View" className="pp-lake-img-inner" style={{filter: 'grayscale(30%)'}} />
-            </div>
-          </div>
-          <div className="pp-exp-content">
-            <h3 className="pp-exp-title">PERMANENT<br/>LAKE VIEW</h3>
-            <p className="pp-exp-desc">
-              Masjid Banda lake sits permanently in your sightline — an uninterrupted, protected water body that will never be built over.
-            </p>
-          </div>
-        </div>
-
-        {/* FOREST */}
-        <div className="pp-exp-block pp-exp-reverse pp-forest-section">
-          <div className="pp-exp-visual">
-             <div className="pp-forest-box"></div>
-          </div>
-          <div className="pp-exp-content">
-            <h3 className="pp-exp-title">FOREST<br/>AMBIENCE</h3>
-            <p className="pp-exp-desc">
-              Dense tree cover delivers a Bangalore Indiranagar feel — right in Hyderabad. Birdsong, cool air, and natural shade are presented as part of the everyday environment.
-            </p>
-          </div>
-        </div>
-
-        {/* TRAFFIC & FOOTPATHS */}
-        <div className="pp-exp-text-blocks">
-          <div className="pp-text-block">
-            <h3 className="pp-exp-title">ZERO TRAFFIC STRESS</h3>
-            <p className="pp-exp-desc">
-              RV Panchajanya Road has minimal through-traffic and a calmer movement pattern.
-            </p>
-          </div>
-          <div className="pp-text-block">
-            <h3 className="pp-exp-title">UNINTERRUPTED FOOTPATHS</h3>
-            <p className="pp-exp-desc">
-              Continuous, encroachment-free footpaths ensure walkable, stress-free immediate surroundings.
-            </p>
-            <div className="pp-footpath-line"></div>
-          </div>
-        </div>
-
-      </section>
-
-      {/* 5. PROJECT NUMBERS */}
-      <section className="pp-stats-section">
-        <div className="pp-stats-grid">
-          <div className="pp-stat-item">
-            <div className="pp-stat-num">18</div>
-            <div className="pp-stat-label">PREMIUM RESIDENCES</div>
-          </div>
-          <div className="pp-stat-item">
-            <div className="pp-stat-num">3 BHK</div>
-            <div className="pp-stat-label">CONFIGURATION</div>
-          </div>
-          <div className="pp-stat-item">
-            <div className="pp-stat-num">6</div>
-            <div className="pp-stat-label">FLOORS</div>
-          </div>
-          <div className="pp-stat-item">
-            <div className="pp-stat-num">40,266</div>
-            <div className="pp-stat-label">SQ. FT. BUILT-UP AREA</div>
-          </div>
-          <div className="pp-stat-item">
-            <div className="pp-stat-num">968.75</div>
-            <div className="pp-stat-label">SQ. MTRS. LAND AREA</div>
-          </div>
-          <div className="pp-stat-item">
-            <div className="pp-stat-num">40</div>
-            <div className="pp-stat-label">CAR PARKS</div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. RESIDENCES */}
-      <section className="pp-residences" id="residences">
-        <div className="pp-res-container">
-          <div className="pp-res-header">
-            <h3 className="pp-section-label">THE RESIDENCES</h3>
-            <h2 className="pp-res-title">THREE WAYS OF LIVING.</h2>
-          </div>
+      {/* =========================================================================
+          SECTION 02 — FEATURED RESIDENCE: UMA SREENIVAS LAKESHORE
+          Exact recreation from reference
+          ========================================================================= */}
+      <section className="pp-featured-residence-section" id="featured-residence">
+        <div className="pp-featured-residence-container">
           
-          <div className="pp-res-interactive">
-            <div className="pp-res-selector">
-              {Object.keys(typeDetails).map(type => (
-                <button 
-                  key={type}
-                  className={`pp-res-btn ${activeType === type ? 'active' : ''}`}
-                  onClick={() => setActiveType(type)}
-                >
-                  {type}
-                </button>
-              ))}
+          {/* Left Column: Project Landscape Photograph (approx 52%) */}
+          <div className="pp-fr-image-col">
+            <div className="pp-fr-image-wrap">
+              <img
+                src="/images/uma_lakeshore.jpg"
+                alt="Uma Sreenivas Lakeshore - Contemporary mid-rise luxury residential apartments reflecting in lake"
+                className="pp-fr-img"
+              />
             </div>
+          </div>
+
+          {/* Right Column: Project Information & Statistics (approx 40%) */}
+          <div className="pp-fr-info-col">
+            <span className="pp-fr-eyebrow">FEATURED RESIDENCE</span>
+            <h2 className="pp-fr-title">Uma Sreenivas Lakeshore</h2>
+            <div className="pp-fr-location">KONDAPUR, HYDERABAD</div>
+
+            <p className="pp-fr-description">
+              Uma Sreenivas Lakeshore is a premium 3 BHK residential development offering 18 exclusive homes with permanent lake views, a serene forest ambience and a quiet road setting in the heart of Kondapur, Hyderabad.
+            </p>
+
+            {/* Three Horizontal Statistics Columns */}
+            <div className="pp-fr-stats-row">
+              <div className="pp-fr-stat-item">
+                <div className="pp-fr-stat-val">18</div>
+                <div className="pp-fr-stat-label">Residences</div>
+              </div>
+
+              <div className="pp-fr-stat-divider" />
+
+              <div className="pp-fr-stat-item">
+                <div className="pp-fr-stat-val">3 BHK</div>
+                <div className="pp-fr-stat-label">Homes</div>
+              </div>
+
+              <div className="pp-fr-stat-divider" />
+
+              <div className="pp-fr-stat-item">
+                <div className="pp-fr-stat-val">Under Construction</div>
+                <div className="pp-fr-stat-label">Status</div>
+              </div>
+            </div>
+
+            {/* Outlined Pill CTA Button */}
+            <div className="pp-fr-cta-wrap">
+              <a href="#experience" className="pp-fr-cta-btn">
+                <span>Explore the Project</span>
+                <span className="pp-fr-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 03 — KEY HIGHLIGHTS: WHY CHOOSE THIS PROJECT?
+          Exact Reference Recreation
+          ========================================================================= */}
+      <section className="pp-highlights-section" id="key-highlights">
+        <div className="pp-highlights-container">
+          
+          {/* Left Column (approx 30%): Eyebrow, Heading, Paragraph with Vertical Line */}
+          <div className="pp-hl-left-col">
+            <span className="pp-hl-eyebrow">KEY HIGHLIGHTS</span>
+            <h2 className="pp-hl-heading">
+              Why Choose<br />
+              This Project?
+            </h2>
+            <div className="pp-hl-desc-wrapper">
+              <div className="pp-hl-accent-line" />
+              <p className="pp-hl-description">
+                Every element at Uma Sreenivas Lakeshore has been carefully planned to bring you a home that is not just beautiful, but also practical, sustainable and built for the future.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column (approx 70%): 3 Columns x 2 Rows Highlights Grid */}
+          <div className="pp-hl-grid-col">
             
-            <div className="pp-res-display">
-              <div className="pp-res-data">
-                <div className="pp-res-data-item">
-                  <span className="label">TOTAL AREA</span>
-                  <span className="value">{typeDetails[activeType].area}</span>
-                </div>
-                <div className="pp-res-data-item">
-                  <span className="label">CONFIGURATION</span>
-                  <span className="value">{typeDetails[activeType].config}</span>
-                </div>
-                <div className="pp-res-data-item">
-                  <span className="label">FACING</span>
-                  <span className="value">{typeDetails[activeType].facing}</span>
-                </div>
-                <div className="pp-res-data-item">
-                  <span className="label">PLINTH AREA</span>
-                  <span className="value">{typeDetails[activeType].plinth}</span>
-                </div>
-                <div className="pp-res-data-item">
-                  <span className="label">COMMON AREA</span>
-                  <span className="value">{typeDetails[activeType].common}</span>
-                </div>
+            {/* Highlight 1: Lake View Homes */}
+            <div className="pp-hl-item">
+              <div className="pp-hl-icon-wrap">
+                <svg className="pp-hl-icon" viewBox="0 0 48 48" fill="none" stroke="#73866D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Sun with rays */}
+                  <circle cx="24" cy="14" r="5" />
+                  <line x1="24" y1="5" x2="24" y2="7" />
+                  <line x1="17" y1="8" x2="18.5" y2="9.5" />
+                  <line x1="31" y1="8" x2="29.5" y2="9.5" />
+                  {/* Lake wave outlines */}
+                  <path d="M12 28 C16 25, 20 25, 24 28 C28 31, 32 31, 36 28" />
+                  <path d="M8 35 C13 32, 19 32, 24 35 C29 38, 35 38, 40 35" />
+                </svg>
               </div>
-              <div className="pp-res-floorplan-placeholder">
-                <div className="fp-text">FLOOR PLAN ASSET ({activeType})</div>
-              </div>
+              <h3 className="pp-hl-title">Lake View Homes</h3>
+              <p className="pp-hl-text">Wake up to serene lake views every day.</p>
             </div>
+
+            {/* Vertical Divider 1 */}
+            <div className="pp-hl-vdivider" />
+
+            {/* Highlight 2: Spacious 3 BHK Homes */}
+            <div className="pp-hl-item">
+              <div className="pp-hl-icon-wrap">
+                <svg className="pp-hl-icon" viewBox="0 0 48 48" fill="none" stroke="#73866D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  {/* House outline with door */}
+                  <path d="M8 20 L24 8 L40 20 V38 H8 Z" />
+                  <path d="M20 38 V26 H28 V38" />
+                </svg>
+              </div>
+              <h3 className="pp-hl-title">Spacious 3 BHK Homes</h3>
+              <p className="pp-hl-text">Thoughtfully designed for modern families.</p>
+            </div>
+
+            {/* Vertical Divider 2 */}
+            <div className="pp-hl-vdivider" />
+
+            {/* Highlight 3: Premium Amenities */}
+            <div className="pp-hl-item">
+              <div className="pp-hl-icon-wrap">
+                <svg className="pp-hl-icon" viewBox="0 0 48 48" fill="none" stroke="#73866D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Minimal recreation pavilion / gazebo outline */}
+                  <path d="M24 8 L38 18 H10 Z" />
+                  <line x1="14" y1="18" x2="14" y2="38" />
+                  <line x1="24" y1="18" x2="24" y2="38" />
+                  <line x1="34" y1="18" x2="34" y2="38" />
+                  <line x1="10" y1="38" x2="38" y2="38" />
+                </svg>
+              </div>
+              <h3 className="pp-hl-title">Premium Amenities</h3>
+              <p className="pp-hl-text">Wellness, recreation and community living.</p>
+            </div>
+
+            {/* Horizontal Row Divider across grid */}
+            <div className="pp-hl-hdivider" />
+
+            {/* Highlight 4: Green Surroundings */}
+            <div className="pp-hl-item">
+              <div className="pp-hl-icon-wrap">
+                <svg className="pp-hl-icon" viewBox="0 0 48 48" fill="none" stroke="#73866D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Two trees outline */}
+                  <path d="M18 10 C13 10, 10 14, 10 20 C10 26, 14 28, 18 28 C22 28, 26 26, 26 20 C26 14, 23 10, 18 10 Z" />
+                  <line x1="18" y1="28" x2="18" y2="38" />
+                  <path d="M32 16 C28 16, 25 19, 25 24 C25 29, 28 32, 32 32 C36 32, 39 29, 39 24 C39 19, 36 16, 32 16 Z" />
+                  <line x1="32" y1="32" x2="32" y2="38" />
+                  <line x1="12" y1="38" x2="38" y2="38" />
+                </svg>
+              </div>
+              <h3 className="pp-hl-title">Green Surroundings</h3>
+              <p className="pp-hl-text">Lush landscaping and fresh air.</p>
+            </div>
+
+            {/* Vertical Divider 3 */}
+            <div className="pp-hl-vdivider" />
+
+            {/* Highlight 5: Strategic Location */}
+            <div className="pp-hl-item">
+              <div className="pp-hl-icon-wrap">
+                <svg className="pp-hl-icon" viewBox="0 0 48 48" fill="none" stroke="#73866D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Location pin outline */}
+                  <path d="M24 8 C17.4 8, 12 13.4, 12 20 C12 28, 24 40, 24 40 C24 40, 36 28, 36 20 C36 13.4, 30.6 8, 24 8 Z" />
+                  <circle cx="24" cy="20" r="4.5" />
+                </svg>
+              </div>
+              <h3 className="pp-hl-title">Strategic Location</h3>
+              <p className="pp-hl-text">Excellent connectivity to major hubs.</p>
+            </div>
+
+            {/* Vertical Divider 4 */}
+            <div className="pp-hl-vdivider" />
+
+            {/* Highlight 6: Sustainable Living */}
+            <div className="pp-hl-item">
+              <div className="pp-hl-icon-wrap">
+                <svg className="pp-hl-icon" viewBox="0 0 48 48" fill="none" stroke="#73866D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Handshake / sustainability partnership outline */}
+                  <path d="M12 22 L18 16 L25 21 L31 16 L38 21" />
+                  <path d="M12 22 L17 28 L23 23 L28 27 L36 21" />
+                  <path d="M8 20 L13 25" />
+                  <path d="M40 20 L35 25" />
+                </svg>
+              </div>
+              <h3 className="pp-hl-title">Sustainable Living</h3>
+              <p className="pp-hl-text">Energy efficient and eco-friendly design.</p>
+            </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* 7. SPECIFICATIONS */}
-      <section className="pp-specs" id="specifications">
-        <div className="pp-specs-container">
-          <h2 className="pp-specs-title">PROJECT SPECIFICATIONS</h2>
+      {/* =========================================================================
+          SECTION 04 — PROJECT GALLERY: “A GLIMPSE OF YOUR FUTURE”
+          Exact Reference Recreation
+          ========================================================================= */}
+      <section className="pp-gallery-section" id="gallery">
+        <div className="pp-gallery-container">
           
-          <div className="pp-specs-table">
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Project Name</div>
-              <div className="pp-spec-val">Uma Sreenivas Lakeshore</div>
+          {/* Header Row: Left Heading & Right Controls */}
+          <div className="pp-gallery-header">
+            <div className="pp-gallery-header-left">
+              <span className="pp-gallery-eyebrow">GALLERY</span>
+              <h2 className="pp-gallery-heading">
+                A Glimpse of<br />
+                Your Future
+              </h2>
             </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Location</div>
-              <div className="pp-spec-val">RV Panchajanya Rd, Masjid Banda, Kondapur, Hyderabad</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Survey Number</div>
-              <div className="pp-spec-val">Sy. No. 185 (Part), Kondapur Village</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Total Land Area</div>
-              <div className="pp-spec-val">1158.80 Sq. Yds / 968.75 Sq. Mtrs</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Structure</div>
-              <div className="pp-spec-val">Stilt + 5 Floors + Additional TDR Floor</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Total Built-Up Area</div>
-              <div className="pp-spec-val">40,266 Sq. Ft. (6,711 Sq. Ft. &times; 6 Floors)</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Total Units</div>
-              <div className="pp-spec-val">18 Premium Residences (3 per floor &times; 6 floors)</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Construction Type</div>
-              <div className="pp-spec-val">RCC Framed — Proposed Beams & Structures</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">GHMC Permit No.</div>
-              <div className="pp-spec-val">2464/GHMC/SWBP/SLP2/2026 &middot; 02/01/2026</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Jurisdiction</div>
-              <div className="pp-spec-val">GHMC, Serilingampally Mandal, R.R. District</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Parking</div>
-              <div className="pp-spec-val">40 Car Parks — Dedicated Cellar + Stilt</div>
-            </div>
-            <div className="pp-spec-row">
-              <div className="pp-spec-key">Construction Status</div>
-              <div className="pp-spec-val">Under Construction — Commenced 2026</div>
+
+            <div className="pp-gallery-controls">
+              <button
+                type="button"
+                className="pp-gallery-arrow-btn"
+                onClick={handlePrevGallery}
+                aria-label="Previous gallery image"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                className="pp-gallery-arrow-btn"
+                onClick={handleNextGallery}
+                aria-label="Next gallery image"
+              >
+                ›
+              </button>
+              <button
+                type="button"
+                className="pp-gallery-view-all"
+                onClick={() => openLightbox(galleryImages[activeGalleryIndex].src)}
+              >
+                View All
+              </button>
+              <div className="pp-gallery-control-line" />
             </div>
           </div>
+
+          {/* Three-Image Composition Grid */}
+          <div className="pp-gallery-composition">
+            
+            {/* Left Column — Primary Image (approx 73%) */}
+            <div
+              className="pp-gallery-primary-col"
+              onClick={() => openLightbox(galleryImages[activeGalleryIndex].src)}
+              role="button"
+              tabIndex={0}
+              aria-label="Open primary image in full view"
+            >
+              <img
+                src={galleryImages[activeGalleryIndex].src}
+                alt={galleryImages[activeGalleryIndex].alt}
+                className="pp-gallery-primary-img"
+              />
+            </div>
+
+            {/* Right Column — Two Stacked Secondary Images */}
+            <div className="pp-gallery-secondary-col">
+              {/* Secondary Image 1: Balcony Terrace / Lake view */}
+              <div
+                className="pp-gallery-secondary-wrap"
+                onClick={() => openLightbox(galleryImages[(activeGalleryIndex + 1) % galleryImages.length].src)}
+                role="button"
+                tabIndex={0}
+                aria-label="Open secondary terrace image"
+              >
+                <img
+                  src={galleryImages[(activeGalleryIndex + 1) % galleryImages.length].src}
+                  alt={galleryImages[(activeGalleryIndex + 1) % galleryImages.length].alt}
+                  className="pp-gallery-secondary-img"
+                />
+              </div>
+
+              {/* Secondary Image 2: Landscaped amenities / pool */}
+              <div
+                className="pp-gallery-secondary-wrap"
+                onClick={() => openLightbox(galleryImages[(activeGalleryIndex + 2) % galleryImages.length].src)}
+                role="button"
+                tabIndex={0}
+                aria-label="Open secondary amenities image"
+              >
+                <img
+                  src={galleryImages[(activeGalleryIndex + 2) % galleryImages.length].src}
+                  alt={galleryImages[(activeGalleryIndex + 2) % galleryImages.length].alt}
+                  className="pp-gallery-secondary-img"
+                />
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
-      {/* 8. CRAFTED TO LAST (MATERIALS) */}
-      <section className="pp-materials">
-        <div className="pp-materials-inner">
-          <h3 className="pp-section-label">CRAFTED TO LAST</h3>
-          <h2 className="pp-materials-title">THE DETAILS OF BUILDING.</h2>
-          <div className="pp-mat-grid">
-            <span>RCC construction</span>
-            <span>Vitrified flooring</span>
-            <span>Granite kitchen platforms</span>
-            <span>UPVC windows</span>
-            <span>Teak-frame main doors</span>
-            <span>Concealed copper wiring</span>
-            <span>Branded sanitary fittings</span>
-            <span>Common overhead tank</span>
-            <span>Sump</span>
-            <span>Lift</span>
-            <span>Generator backup</span>
+      {/* Accessible Lightbox Modal */}
+      {lightboxOpen && (
+        <div className="pp-gallery-lightbox" onClick={closeLightbox} role="dialog" aria-modal="true">
+          <div className="pp-lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <img src={lightboxImg} alt="Enlarged gallery view" className="pp-lightbox-img" />
+            <button className="pp-lightbox-close" onClick={closeLightbox} aria-label="Close lightbox">
+              ✕
+            </button>
           </div>
+        </div>
+      )}
+
+      {/* =========================================================================
+          SECTION 05 — THE DETAILS THAT MATTER
+          Exact Reference Recreation
+          ========================================================================= */}
+      <section className="pp-details-matter-section" id="project-details">
+        <div className="pp-details-matter-container">
+          
+          {/* Left Column (approx 33%): Eyebrow, Heading, Paragraph with Vertical Accent */}
+          <div className="pp-dm-left-col">
+            <span className="pp-dm-eyebrow">THE DETAILS</span>
+            <h2 className="pp-dm-heading">
+              The Details<br />
+              That Matter
+            </h2>
+            <div className="pp-dm-desc-wrapper">
+              <div className="pp-dm-accent-line" />
+              <p className="pp-dm-description">
+                Every element has been carefully planned to bring you a home that is not just beautiful, but also practical, sustainable and built for the future.
+              </p>
+            </div>
+          </div>
+
+          {/* Full-Height Vertical Divider between columns */}
+          <div className="pp-dm-col-divider" />
+
+          {/* Right Column (approx 67%): Six Specification Rows */}
+          <div className="pp-dm-right-col">
+            
+            {/* Row 1 — Location */}
+            <div className="pp-dm-row multi-line-row">
+              <div className="pp-dm-label">LOCATION</div>
+              <div className="pp-dm-value">
+                RV Panchajanya Road, Masjid Banda,<br />
+                Kondapur, Hyderabad
+              </div>
+            </div>
+
+            {/* Row 2 — Land Area */}
+            <div className="pp-dm-row">
+              <div className="pp-dm-label">LAND AREA</div>
+              <div className="pp-dm-value">1,158.80 sq yd (968.75 sq m)</div>
+            </div>
+
+            {/* Row 3 — Built-up Area */}
+            <div className="pp-dm-row">
+              <div className="pp-dm-label">BUILT-UP AREA</div>
+              <div className="pp-dm-value">40,266 sq ft</div>
+            </div>
+
+            {/* Row 4 — Structure */}
+            <div className="pp-dm-row">
+              <div className="pp-dm-label">STRUCTURE</div>
+              <div className="pp-dm-value">Stilt + 5 floors + additional TDR floor</div>
+            </div>
+
+            {/* Row 5 — Homes */}
+            <div className="pp-dm-row">
+              <div className="pp-dm-label">HOMES</div>
+              <div className="pp-dm-value">18 premium 3 BHK residences</div>
+            </div>
+
+            {/* Row 6 — Status */}
+            <div className="pp-dm-row no-divider">
+              <div className="pp-dm-label">STATUS</div>
+              <div className="pp-dm-value">Under construction</div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
-      {/* 9. ENQUIRY CTA */}
-      <section className="pp-enquiry">
-        <div className="pp-enq-content">
-          <h2 className="pp-enq-title">LET'S TALK ABOUT<br/>UMA SREENIVAS LAKESHORE.</h2>
-          <p className="pp-enq-desc">
-            Whether you would like to understand the residences, the project, or arrange a conversation with Sthira Axis Infra, we would love to hear from you.
-          </p>
-          <div className="pp-enq-contact">
-            <div>PHONE: +91 9966 196 969</div>
-            <div>EMAIL: sthiraaxisinfra@gmail.com</div>
+      {/* =========================================================================
+          SECTION 06 — FLOOR PLANS: THOUGHTFULLY DESIGNED LAYOUTS
+          Exact Reference Recreation
+          ========================================================================= */}
+      <section className="pp-floorplans-section" id="floor-plans">
+        <div className="pp-floorplans-container">
+          
+          {/* Left Column (approx 28%): Eyebrow, Heading, Paragraph, Outlined CTA */}
+          <div className="pp-fp-left-col">
+            <span className="pp-fp-eyebrow">FLOOR PLANS</span>
+            <h2 className="pp-fp-heading">
+              Thoughtfully<br />
+              Designed Layouts
+            </h2>
+            <p className="pp-fp-description">
+              Choose from our well-planned 3 BHK floor plans, crafted to offer optimal space utilization, natural light and ventilation.
+            </p>
+            <div className="pp-fp-cta-wrap">
+              <button
+                type="button"
+                className="pp-fp-cta-btn"
+                onClick={() => openLightbox('/images/floorplan_type_a.png')}
+                aria-label="View Floor Plans in full detail"
+              >
+                <span>View Floor Plans</span>
+                <span className="pp-fp-arrow">→</span>
+              </button>
+            </div>
           </div>
-          <button className="pp-enq-btn">
-            ENQUIRE ABOUT THE PROJECT <ArrowUpRight size={16} />
-          </button>
+
+          {/* Right Column (approx 72%): Three Horizontal Floor Plan Previews */}
+          <div className="pp-fp-right-col">
+            
+            {/* Preview 1: Type A */}
+            <div className="pp-fp-card">
+              <div
+                className="pp-fp-img-frame"
+                onClick={() => openLightbox('/images/floorplan_type_a.png')}
+                role="button"
+                tabIndex={0}
+                aria-label="View Type A floor plan full size"
+              >
+                <img
+                  src="/images/floorplan_type_a.png"
+                  alt="Type A 3 BHK Floor Plan - 2,350 sq ft"
+                  className="pp-fp-plan-img"
+                />
+              </div>
+              <div className="pp-fp-meta">
+                <h3 className="pp-fp-title">Type A</h3>
+                <div className="pp-fp-area">2,350 sq ft</div>
+              </div>
+            </div>
+
+            {/* Preview 2: Type B */}
+            <div className="pp-fp-card">
+              <div
+                className="pp-fp-img-frame"
+                onClick={() => openLightbox('/images/floorplan_type_b.png')}
+                role="button"
+                tabIndex={0}
+                aria-label="View Type B floor plan full size"
+              >
+                <img
+                  src="/images/floorplan_type_b.png"
+                  alt="Type B 3 BHK Floor Plan - 2,271 sq ft"
+                  className="pp-fp-plan-img"
+                />
+              </div>
+              <div className="pp-fp-meta">
+                <h3 className="pp-fp-title">Type B</h3>
+                <div className="pp-fp-area">2,271 sq ft</div>
+              </div>
+            </div>
+
+            {/* Preview 3: Type C */}
+            <div className="pp-fp-card">
+              <div
+                className="pp-fp-img-frame"
+                onClick={() => openLightbox('/images/floorplan_type_c.png')}
+                role="button"
+                tabIndex={0}
+                aria-label="View Type C floor plan full size"
+              >
+                <img
+                  src="/images/floorplan_type_c.png"
+                  alt="Type C 3 BHK Floor Plan - 2,150 sq ft"
+                  className="pp-fp-plan-img"
+                />
+              </div>
+              <div className="pp-fp-meta">
+                <h3 className="pp-fp-title">Type C</h3>
+                <div className="pp-fp-area">2,150 sq ft</div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
-      {/* 10. HOMEPAGE FOOTER / CONTACT SECTION */}
+      {/* =========================================================================
+          SECTION 07 — SPECIFICATIONS: DESIGNED FOR COMFORT & QUALITY
+          Exact Reference Recreation
+          ========================================================================= */}
+      <section className="pp-specifications-section" id="specifications">
+        <div className="pp-specifications-container">
+          
+          {/* Left Column (approx 40%): Large Living Room Interior Image */}
+          <div className="pp-sp-left-col">
+            <div className="pp-sp-image-wrap">
+              <img
+                src="/images/specifications_living_room.jpg"
+                alt="Uma Sreenivas Lakeshore - Spacious modern living room with panoramic lake view"
+                className="pp-sp-img"
+              />
+            </div>
+          </div>
+
+          {/* Right Column (approx 60%): Header & 2-Column Specifications Grid */}
+          <div className="pp-sp-right-col">
+            
+            {/* Header */}
+            <div className="pp-sp-header">
+              <span className="pp-sp-eyebrow">SPECIFICATIONS</span>
+              <h2 className="pp-sp-heading">
+                Designed for<br />
+                Comfort & Quality
+              </h2>
+            </div>
+
+            {/* Two-Column Specification Items separated by a thin vertical divider */}
+            <div className="pp-sp-grid-wrap">
+              
+              {/* Left Specification Column (4 items) */}
+              <div className="pp-sp-col">
+                
+                {/* Item 1 — Structure */}
+                <div className="pp-sp-item">
+                  <div className="pp-sp-icon-wrap">
+                    <svg className="pp-sp-icon" viewBox="0 0 32 32" fill="none" stroke="#748779" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="7" y="5" width="18" height="23" rx="1.5" />
+                      <line x1="12" y1="9" x2="14" y2="9" />
+                      <line x1="18" y1="9" x2="20" y2="9" />
+                      <line x1="12" y1="14" x2="14" y2="14" />
+                      <line x1="18" y1="14" x2="20" y2="14" />
+                      <line x1="12" y1="19" x2="14" y2="19" />
+                      <line x1="18" y1="19" x2="20" y2="19" />
+                      <line x1="14" y1="28" x2="18" y2="28" />
+                    </svg>
+                  </div>
+                  <div className="pp-sp-content">
+                    <h3 className="pp-sp-title">Structure</h3>
+                    <p className="pp-sp-desc">
+                      Stilt + 5 Floors + Additional<br />
+                      TDR Floor
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 2 — Flooring */}
+                <div className="pp-sp-item">
+                  <div className="pp-sp-icon-wrap">
+                    <svg className="pp-sp-icon" viewBox="0 0 32 32" fill="none" stroke="#748779" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="5" y="5" width="22" height="22" rx="2" />
+                      <line x1="16" y1="5" x2="16" y2="27" />
+                      <line x1="5" y1="16" x2="27" y2="16" />
+                    </svg>
+                  </div>
+                  <div className="pp-sp-content">
+                    <h3 className="pp-sp-title">Flooring</h3>
+                    <p className="pp-sp-desc">
+                      Vitrified tiles for living,<br />
+                      dining & bedrooms
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 3 — Kitchen */}
+                <div className="pp-sp-item">
+                  <div className="pp-sp-icon-wrap">
+                    <svg className="pp-sp-icon" viewBox="0 0 32 32" fill="none" stroke="#748779" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="5" y="8" width="22" height="17" rx="2" />
+                      <line x1="5" y1="14" x2="27" y2="14" />
+                      <circle cx="11" cy="19.5" r="2" />
+                      <circle cx="21" cy="19.5" r="2" />
+                    </svg>
+                  </div>
+                  <div className="pp-sp-content">
+                    <h3 className="pp-sp-title">Kitchen</h3>
+                    <p className="pp-sp-desc">
+                      Granite platform with<br />
+                      SS sink and utility space
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 4 — Bathrooms */}
+                <div className="pp-sp-item">
+                  <div className="pp-sp-icon-wrap">
+                    <svg className="pp-sp-icon" viewBox="0 0 32 32" fill="none" stroke="#748779" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M6 18 C6 24, 10 25, 16 25 C22 25, 26 24, 26 18 L26 16 H6 Z" />
+                      <line x1="8" y1="25" x2="7" y2="28" />
+                      <line x1="24" y1="25" x2="25" y2="28" />
+                      <path d="M10 16 V8 C10 6.5, 12 5, 14 5 C15.5 5, 16 6, 16 8 V10" />
+                    </svg>
+                  </div>
+                  <div className="pp-sp-content">
+                    <h3 className="pp-sp-title">Bathrooms</h3>
+                    <p className="pp-sp-desc">
+                      Premium sanitary ware<br />
+                      and anti-skid tiles
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Thin Vertical Column Divider */}
+              <div className="pp-sp-divider" />
+
+              {/* Right Specification Column (4 items) */}
+              <div className="pp-sp-col">
+                
+                {/* Item 5 — Walls & Paints */}
+                <div className="pp-sp-item">
+                  <div className="pp-sp-icon-wrap">
+                    <svg className="pp-sp-icon" viewBox="0 0 32 32" fill="none" stroke="#748779" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M6 26 L14 18 L22 26 H6 Z" />
+                      <path d="M14 18 L20 12 L26 18" />
+                      <rect x="5" y="6" width="22" height="20" rx="2" />
+                    </svg>
+                  </div>
+                  <div className="pp-sp-content">
+                    <h3 className="pp-sp-title">Walls & Paints</h3>
+                    <p className="pp-sp-desc">
+                      Internal: Putty finish<br />
+                      External: Weather proof paint
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 6 — Doors & Windows */}
+                <div className="pp-sp-item">
+                  <div className="pp-sp-icon-wrap">
+                    <svg className="pp-sp-icon" viewBox="0 0 32 32" fill="none" stroke="#748779" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="5" y="6" width="10" height="20" rx="1" />
+                      <circle cx="12" cy="16" r="1" fill="#748779" />
+                      <rect x="17" y="6" width="10" height="13" rx="1" />
+                      <line x1="22" y1="6" x2="22" y2="19" />
+                      <line x1="17" y1="12.5" x2="27" y2="12.5" />
+                    </svg>
+                  </div>
+                  <div className="pp-sp-content">
+                    <h3 className="pp-sp-title">Doors & Windows</h3>
+                    <p className="pp-sp-desc">
+                      Main door: Wooden frame<br />
+                      Internal: Flush doors<br />
+                      Windows: Aluminium / UPVC
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 7 — Power Backup */}
+                <div className="pp-sp-item">
+                  <div className="pp-sp-icon-wrap">
+                    <svg className="pp-sp-icon" viewBox="0 0 32 32" fill="none" stroke="#748779" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="17 4 7 17 15 17 13 28 25 13 17 13 17 4" />
+                    </svg>
+                  </div>
+                  <div className="pp-sp-content">
+                    <h3 className="pp-sp-title">Power Backup</h3>
+                    <p className="pp-sp-desc">
+                      24x7 DG backup for common<br />
+                      areas & lifts
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 8 — Security */}
+                <div className="pp-sp-item">
+                  <div className="pp-sp-icon-wrap">
+                    <svg className="pp-sp-icon" viewBox="0 0 32 32" fill="none" stroke="#748779" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 4 L6 8 V16 C6 22.5, 10.5 27, 16 28 C21.5 27, 26 22.5, 26 16 V8 Z" />
+                      <path d="M12 15 L15 18 L21 12" />
+                    </svg>
+                  </div>
+                  <div className="pp-sp-content">
+                    <h3 className="pp-sp-title">Security</h3>
+                    <p className="pp-sp-desc">
+                      CCTV, intercom and<br />
+                      24x7 security
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* Reusable Footer Section */}
       <ContactSection />
 
     </div>

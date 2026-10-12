@@ -563,6 +563,8 @@
 ===================================================== */
 
 .new-foundation-progress {
+  display: none;
+
   position: absolute;
 
   left: 6vw;

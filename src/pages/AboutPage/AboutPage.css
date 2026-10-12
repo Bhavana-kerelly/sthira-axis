@@ -1,0 +1,724 @@
+/* =========================================================================
+   ABOUT PAGE STYLING — EXACT PIXEL-PRECISE RECREATION
+   Reference 1024px Viewport
+   ========================================================================= */
+
+.about-page {
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #203F38;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================================
+   SECTION 1 — HERO: ABOUT US
+   ========================================================================= */
+
+.ab-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  background-image: url('/images/about_hero_pool.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Pale horizontal gradient overlay covering full hero section */
+.ab-hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #FFFFFF 0%,
+    #FFFFFF 38%,
+    rgba(255, 255, 255, 0.94) 48%,
+    rgba(255, 255, 255, 0.65) 58%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 85%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 1. Transparent Header within Hero */
+.ab-header {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 38px 70px 0 70px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.ab-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.ab-logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.ab-logo-img {
+  width: 148px;
+  height: auto;
+  display: block;
+}
+
+/* Translucent pill navigation capsule */
+.ab-nav-capsule {
+  width: 393px;
+  height: 39px;
+  background: rgba(50, 67, 65, 0.75);
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ab-nav-link {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.ab-nav-link:hover {
+  opacity: 0.85;
+}
+
+.ab-nav-link-active {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+/* Active navigation item underline for ABOUT */
+.ab-active-indicator {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 43px;
+  height: 3px;
+  background-color: #D3BE39;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* 2. Main Hero Body within Hero Section */
+.ab-hero-body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 115px 0 65px 0;
+  box-sizing: border-box;
+}
+
+.ab-hero-content-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1024px;
+  padding-left: 77px;
+  box-sizing: border-box;
+}
+
+.ab-hero-text-block {
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ab-hero-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #617A43;
+  text-transform: uppercase;
+}
+
+.ab-hero-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #29463D;
+  margin: 16px 0 26px 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.ab-hero-desc-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+}
+
+.ab-hero-accent-line {
+  width: 1.5px;
+  height: 96px;
+  background-color: #B9C94B;
+  flex-shrink: 0;
+}
+
+.ab-hero-description {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #565B58;
+  margin: 0;
+  max-width: 360px;
+  text-align: left;
+}
+
+/* =========================================================================
+   SECTION 2 — OUR STORY
+   ========================================================================= */
+
+.ab-story-section {
+  width: 100%;
+  background-color: #FFFFFF;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0 75px 0;
+  box-sizing: border-box;
+}
+
+.ab-story-container {
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 78px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Column */
+.ab-story-left {
+  width: 390px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ab-story-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #627B43;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ab-story-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 44px;
+  color: #29473D;
+  margin: 0 0 25px 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.ab-story-p1 {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #686868;
+  max-width: 380px;
+  margin: 0 0 22px 0;
+  text-align: left;
+}
+
+.ab-story-p2 {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #686868;
+  max-width: 380px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Main Vertical Divider */
+.ab-story-divider {
+  width: 1.5px;
+  height: 420px;
+  background-color: #C7D0C1;
+  flex-shrink: 0;
+  margin: 0 50px;
+}
+
+/* Right Column (4 Vertically Stacked Items) */
+.ab-story-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ab-story-item {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.ab-item-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 3px solid #E6EBE2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+.ab-item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ab-item-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: #29473D;
+  margin: 0 0 4px 0;
+  text-align: left;
+}
+
+.ab-item-desc {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #818581;
+  margin: 0;
+  text-align: left;
+}
+
+/* =========================================================================
+   SECTION 3 — WHAT SETS US APART
+   Reference 1024px Viewport
+   ========================================================================= */
+
+.ab-apart-section {
+  width: 100%;
+  background-color: #F2F5EE;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0 75px 0;
+  box-sizing: border-box;
+}
+
+.ab-apart-container {
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 60px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+/* Left Area: Eyebrow, Heading, Paragraph */
+.ab-apart-left {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ab-apart-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #627B43;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ab-apart-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 44px;
+  color: #29473D;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.ab-apart-desc {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #686868;
+  margin: 0;
+  text-align: left;
+  max-width: 280px;
+}
+
+/* Right Area: 4-Column Image Grid */
+.ab-apart-grid {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ab-apart-col {
+  width: 156px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ab-apart-img-wrap {
+  width: 100%;
+  height: 155px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #E2E8DC;
+  margin-bottom: 14px;
+}
+
+.ab-apart-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.ab-apart-title {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: #203F38;
+  margin: 0;
+  text-align: left;
+}
+
+.ab-apart-line {
+  width: 26px;
+  height: 2px;
+  background-color: #627B43;
+  margin: 10px 0;
+  border-radius: 1px;
+}
+
+.ab-apart-text {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #777D78;
+  margin: 0;
+  text-align: left;
+}
+
+/* =========================================================================
+   SECTION 4 — OUR JOURNEY CONTINUES
+   Reference 1024px Viewport
+   ========================================================================= */
+
+.ab-journey-section {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  background-image: url('/images/philosophy_action_bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 65px 0;
+}
+
+.ab-journey-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(25, 38, 31, 0.28);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ab-journey-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 60px 0 100px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Group */
+.ab-journey-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.ab-journey-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #F4F4EF;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.ab-journey-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 44px;
+  color: #F7F6ED;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+/* Right Group with Vertical Divider */
+.ab-journey-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.ab-journey-divider {
+  width: 1.5px;
+  height: 110px;
+  background-color: #C4CC54;
+  flex-shrink: 0;
+}
+
+.ab-journey-desc {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #F1F1EB;
+  margin: 0;
+  max-width: 360px;
+  text-align: left;
+}
+
+/* =========================================================================
+   RESPONSIVE STYLES
+   ========================================================================= */
+
+@media (max-width: 1024px) {
+  .ab-header {
+    padding: 30px 40px 0 40px;
+  }
+  .ab-hero-content-container {
+    padding-left: 50px;
+  }
+  .ab-story-container {
+    padding: 0 50px;
+  }
+  .ab-story-divider {
+    margin: 0 30px;
+  }
+  .ab-apart-container {
+    padding: 0 40px 0 50px;
+    gap: 20px;
+  }
+  .ab-journey-container {
+    padding: 0 40px 0 60px;
+  }
+}
+
+@media (max-width: 860px) {
+  .ab-story-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 0 40px;
+  }
+  .ab-story-divider {
+    display: none;
+  }
+  .ab-story-left {
+    width: 100%;
+  }
+  .ab-story-right {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .ab-apart-container {
+    flex-direction: column;
+    padding: 0 40px;
+    gap: 32px;
+  }
+  .ab-apart-left {
+    width: 100%;
+    max-width: 480px;
+  }
+  .ab-apart-grid {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .ab-apart-col {
+    min-width: 140px;
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  .ab-journey-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 0 40px;
+  }
+  .ab-journey-right {
+    gap: 16px;
+  }
+  .ab-journey-divider {
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ab-hero-section {
+    min-height: auto;
+  }
+  .ab-header {
+    padding: 24px 20px 0 20px;
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .ab-nav-capsule {
+    width: 100%;
+    max-width: 360px;
+    padding: 0 16px;
+  }
+  .ab-hero-body {
+    padding: 30px 20px 40px 20px;
+  }
+  .ab-hero-bg-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.85) 60%,
+      rgba(255, 255, 255, 0.6) 100%
+    );
+  }
+  .ab-hero-content-container {
+    padding-left: 0;
+  }
+  .ab-hero-heading {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .ab-story-section {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+  .ab-story-container {
+    padding: 0;
+  }
+  .ab-story-heading {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .ab-apart-section {
+    padding: 40px 20px;
+  }
+  .ab-apart-container {
+    padding: 0;
+  }
+  .ab-apart-heading {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .ab-apart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .ab-apart-col {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .ab-journey-section {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+  .ab-journey-container {
+    padding: 0;
+  }
+  .ab-journey-heading {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .ab-journey-right {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .ab-journey-desc {
+    max-width: 100%;
+  }
+}

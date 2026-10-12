@@ -80,6 +80,1337 @@
   font-weight: 500;
 }
 
+/* =========================================================================
+   SECTION 02 — FEATURED RESIDENCE: UMA SREENIVAS LAKESHORE
+   Exact Reference recreation:
+   - Background: #FAFAF6
+   - Primary Heading: #294B43
+   - Eyebrow: #657A60
+   - Description: #78837F
+   - Separator lines: #D4DCD5
+   - Button border: #8A9A91
+   - Button text: #53675F
+   ========================================================================= */
+
+.pp-featured-residence-section {
+  width: 100%;
+  background-color: #FAFAF6;
+  padding: 42px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-featured-residence-container {
+  width: 87%;
+  max-width: 1650px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5%;
+  box-sizing: border-box;
+}
+
+/* Left Column: Landscape photograph (approx 52%) */
+.pp-fr-image-col {
+  flex: 0 0 52%;
+  display: flex;
+}
+
+.pp-fr-image-wrap {
+  width: 100%;
+  aspect-ratio: 1.75 / 1;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #E6EAE4;
+}
+
+.pp-fr-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Column: Project Information (approx 40%) */
+.pp-fr-info-col {
+  flex: 0 0 43%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+  box-sizing: border-box;
+}
+
+.pp-fr-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #657A60;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.pp-fr-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(32px, 2.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #294B43;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.pp-fr-location {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #657A60;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.pp-fr-description {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: clamp(14px, 1.05vw, 17.5px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #78837F;
+  margin: 0 0 32px 0;
+  max-width: 580px;
+  text-align: left;
+}
+
+/* Three Horizontal Statistics Columns */
+.pp-fr-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  margin-bottom: 34px;
+  max-width: 560px;
+}
+
+.pp-fr-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pp-fr-stat-val {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(21px, 1.5vw, 26px);
+  font-weight: 400;
+  color: #294B43;
+  line-height: 1.15;
+  margin-bottom: 7px;
+  white-space: nowrap;
+}
+
+.pp-fr-stat-label {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #78837F;
+  line-height: 1;
+}
+
+.pp-fr-stat-divider {
+  width: 1px;
+  height: 48px;
+  background-color: #D4DCD5;
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+/* Outlined Pill CTA Button */
+.pp-fr-cta-wrap {
+  display: flex;
+}
+
+.pp-fr-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  height: 52px;
+  padding: 0 24px;
+  background-color: transparent;
+  border: 1px solid #8A9A91;
+  border-radius: 30px;
+  color: #53675F;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15.5px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.pp-fr-cta-btn:hover {
+  background-color: #F0F3EC;
+  border-color: #294B43;
+  color: #294B43;
+}
+
+.pp-fr-arrow {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.pp-fr-cta-btn:hover .pp-fr-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive Rules for Featured Residence */
+@media (max-width: 1200px) {
+  .pp-featured-residence-container {
+    width: 90%;
+    gap: 4%;
+  }
+  .pp-fr-stats-row {
+    gap: 16px;
+  }
+  .pp-fr-stat-divider {
+    margin: 0 4px;
+  }
+}
+
+@media (max-width: 900px) {
+  .pp-featured-residence-section {
+    padding: 40px 24px;
+  }
+  .pp-featured-residence-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .pp-fr-image-col {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .pp-fr-info-col {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .pp-fr-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .pp-fr-stats-row {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .pp-fr-stat-divider {
+    display: none;
+  }
+  .pp-fr-stat-item {
+    flex: 1 1 40%;
+  }
+  .pp-fr-cta-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* =========================================================================
+   SECTION 03 — KEY HIGHLIGHTS: WHY CHOOSE THIS PROJECT?
+   Exact Reference recreation:
+   - Section background: #F0F4ED
+   - Primary headings & titles: #294B43
+   - Supporting text: #7C8580
+   - Eyebrow: #71846C
+   - Icons: #73866D
+   - Vertical accent line: #9AAE82
+   - Grid dividers: #D5DDD3
+   ========================================================================= */
+
+.pp-highlights-section {
+  width: 100%;
+  background-color: #F0F4ED;
+  padding: 68px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-highlights-container {
+  width: 87%;
+  max-width: 1650px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5%;
+  box-sizing: border-box;
+}
+
+/* Left Column: Eyebrow, Heading, Paragraph with Vertical Line (approx 30%) */
+.pp-hl-left-col {
+  flex: 0 0 30%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-hl-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #71846C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pp-hl-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(38px, 3.1vw, 52px);
+  font-weight: 400;
+  line-height: 1.08;
+  color: #294B43;
+  margin: 0 0 34px 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.pp-hl-desc-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.pp-hl-accent-line {
+  width: 3px;
+  background-color: #9AAE82;
+  flex-shrink: 0;
+  border-radius: 1.5px;
+}
+
+.pp-hl-description {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: clamp(14px, 1.05vw, 17.5px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #7C8580;
+  margin: 0;
+  text-align: left;
+}
+
+/* Right Column: 3 Columns x 2 Rows Grid (approx 70%) */
+.pp-hl-grid-col {
+  flex: 0 0 65%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  row-gap: 36px;
+  box-sizing: border-box;
+}
+
+.pp-hl-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.pp-hl-icon-wrap {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 18px;
+}
+
+.pp-hl-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.pp-hl-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(18px, 1.35vw, 22px);
+  font-weight: 400;
+  color: #294B43;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.pp-hl-text {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #7C8580;
+  margin: 0;
+  text-align: left;
+}
+
+/* Dividers */
+.pp-hl-vdivider {
+  width: 1px;
+  background-color: #D5DDD3;
+  align-self: stretch;
+}
+
+.pp-hl-hdivider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background-color: transparent; /* Clean row gap */
+  margin: 0;
+}
+
+/* Responsive Rules for Highlights */
+@media (max-width: 1200px) {
+  .pp-highlights-container {
+    width: 90%;
+    gap: 4%;
+  }
+  .pp-hl-grid-col {
+    flex: 0 0 66%;
+  }
+}
+
+@media (max-width: 960px) {
+  .pp-highlights-section {
+    padding: 50px 24px;
+  }
+  .pp-highlights-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 45px;
+  }
+  .pp-hl-left-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .pp-hl-grid-col {
+    flex: 1 1 100%;
+    width: 100%;
+    grid-template-columns: 1fr auto 1fr;
+    row-gap: 30px;
+  }
+  .pp-hl-vdivider:nth-of-type(2),
+  .pp-hl-vdivider:nth-of-type(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .pp-hl-grid-col {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+  .pp-hl-vdivider {
+    display: none;
+  }
+  .pp-hl-item {
+    padding: 0;
+  }
+}
+
+/* =========================================================================
+   SECTION 04 — PROJECT GALLERY: “A GLIMPSE OF YOUR FUTURE”
+   Exact Reference recreation:
+   - Section background: #FAFAF6
+   - Heading: #294B43
+   - Eyebrow: #71846C
+   - Arrow controls: #64766E
+   - "View All" text: #53675F
+   - Decorative control line: #A2B397
+   ========================================================================= */
+
+.pp-gallery-section {
+  width: 100%;
+  background-color: #FAFAF6;
+  padding: 55px 0 65px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-gallery-container {
+  width: 87%;
+  max-width: 1650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Header Row */
+.pp-gallery-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.pp-gallery-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-gallery-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #71846C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pp-gallery-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(34px, 2.7vw, 46px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #294B43;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+/* Controls */
+.pp-gallery-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.pp-gallery-arrow-btn {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #64766E;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.pp-gallery-arrow-btn:hover {
+  color: #294B43;
+  transform: scale(1.15);
+}
+
+.pp-gallery-view-all {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #53675F;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.pp-gallery-view-all:hover {
+  color: #294B43;
+}
+
+.pp-gallery-control-line {
+  width: 48px;
+  height: 2px;
+  background-color: #A2B397;
+  border-radius: 1px;
+}
+
+/* Three-Image Composition */
+.pp-gallery-composition {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Left Column: Primary Image (approx 73%) */
+.pp-gallery-primary-col {
+  flex: 0 0 72.5%;
+  aspect-ratio: 1.85 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #E6EAE4;
+  position: relative;
+}
+
+.pp-gallery-primary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+}
+
+.pp-gallery-primary-col:hover .pp-gallery-primary-img {
+  transform: scale(1.02);
+}
+
+/* Right Column: Two Stacked Secondary Images */
+.pp-gallery-secondary-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.pp-gallery-secondary-wrap {
+  width: 100%;
+  flex: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #E6EAE4;
+  position: relative;
+}
+
+.pp-gallery-secondary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  transition: transform 0.5s ease;
+}
+
+.pp-gallery-secondary-wrap:hover .pp-gallery-secondary-img {
+  transform: scale(1.03);
+}
+
+/* Lightbox Modal */
+.pp-gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(14, 25, 20, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.pp-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-lightbox-img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  object-fit: contain;
+}
+
+.pp-lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 6px;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.pp-lightbox-close:hover {
+  opacity: 0.75;
+}
+
+/* Responsive Rules for Gallery */
+@media (max-width: 1200px) {
+  .pp-gallery-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
+  .pp-gallery-section {
+    padding: 40px 20px;
+  }
+  .pp-gallery-composition {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pp-gallery-primary-col {
+    flex: 1 1 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .pp-gallery-secondary-col {
+    flex-direction: row;
+    gap: 14px;
+  }
+  .pp-gallery-secondary-wrap {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 600px) {
+  .pp-gallery-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .pp-gallery-secondary-col {
+    flex-direction: column;
+  }
+}
+
+/* =========================================================================
+   SECTION 05 — THE DETAILS THAT MATTER
+   Exact Reference recreation:
+   - Section background: #F0F4ED
+   - Main heading: #294B43
+   - Eyebrow and labels: #71846C
+   - Supporting text and values: #78837F
+   - Vertical accent: #9AAE82
+   - Horizontal dividers: #D5DDD3
+   ========================================================================= */
+
+.pp-details-matter-section {
+  width: 100%;
+  background-color: #F0F4ED;
+  padding: 62px 0 68px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-details-matter-container {
+  width: 87%;
+  max-width: 1650px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Left Column (approx 33%) */
+.pp-dm-left-col {
+  flex: 0 0 32%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-dm-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #71846C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pp-dm-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(38px, 3.1vw, 52px);
+  font-weight: 400;
+  line-height: 1.08;
+  color: #294B43;
+  margin: 0 0 34px 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.pp-dm-desc-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.pp-dm-accent-line {
+  width: 3px;
+  background-color: #9AAE82;
+  flex-shrink: 0;
+  border-radius: 1.5px;
+}
+
+.pp-dm-description {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: clamp(14px, 1.05vw, 17.5px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #78837F;
+  margin: 0;
+  max-width: 400px;
+  text-align: left;
+}
+
+/* Full-Height Column Divider */
+.pp-dm-col-divider {
+  width: 1px;
+  background-color: #D5DDD3;
+  align-self: stretch;
+  margin: 0 35px 0 25px;
+  flex-shrink: 0;
+}
+
+/* Right Column: Specification Rows (approx 67%) */
+.pp-dm-right-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.pp-dm-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #D5DDD3;
+  box-sizing: border-box;
+}
+
+.pp-dm-row.multi-line-row {
+  align-items: flex-start;
+  padding-top: 6px;
+  padding-bottom: 18px;
+}
+
+.pp-dm-row.no-divider {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pp-dm-label {
+  flex: 0 0 35%;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  color: #71846C;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.pp-dm-value {
+  flex: 0 0 65%;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: clamp(14.5px, 1.05vw, 17px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #78837F;
+  text-align: left;
+}
+
+/* Responsive Rules for Details That Matter */
+@media (max-width: 1200px) {
+  .pp-details-matter-container {
+    width: 90%;
+  }
+  .pp-dm-col-divider {
+    margin: 0 24px 0 16px;
+  }
+}
+
+@media (max-width: 960px) {
+  .pp-details-matter-section {
+    padding: 50px 24px;
+  }
+  .pp-details-matter-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .pp-dm-left-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .pp-dm-col-divider {
+    display: none;
+  }
+  .pp-dm-right-col {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .pp-dm-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 14px 0;
+  }
+  .pp-dm-label {
+    flex: 1 1 100%;
+  }
+  .pp-dm-value {
+    flex: 1 1 100%;
+  }
+}
+
+/* =========================================================================
+   SECTION 06 — FLOOR PLANS: THOUGHTFULLY DESIGNED LAYOUTS
+   Exact Reference recreation:
+   - Section background: #F2F5EF
+   - Main heading: #294B43
+   - Eyebrow: #71846C
+   - Supporting paragraph: #7C8580
+   - Frame background: #F8FAF6
+   - Frame border: #E0E7DE
+   - Button border: #B7C5BA
+   - Button text & arrow: #64766E
+   ========================================================================= */
+
+.pp-floorplans-section {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 60px 0 70px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-floorplans-container {
+  width: 87%;
+  max-width: 1650px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5%;
+  box-sizing: border-box;
+}
+
+/* Left Column (approx 28%) */
+.pp-fp-left-col {
+  flex: 0 0 28%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-fp-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #71846C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pp-fp-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(34px, 2.7vw, 46px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #294B43;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.pp-fp-description {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #7C8580;
+  margin: 0 0 28px 0;
+  max-width: 330px;
+  text-align: left;
+}
+
+.pp-fp-cta-wrap {
+  display: flex;
+}
+
+.pp-fp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  height: 48px;
+  padding: 0 26px;
+  background-color: transparent;
+  border: 1.5px solid #B7C5BA;
+  border-radius: 26px;
+  color: #64766E;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.pp-fp-cta-btn:hover {
+  background-color: #FAFBF8;
+  border-color: #294B43;
+  color: #294B43;
+}
+
+.pp-fp-arrow {
+  font-size: 17px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.pp-fp-cta-btn:hover .pp-fp-arrow {
+  transform: translateX(4px);
+}
+
+/* Right Column (approx 72%): 3 Horizontal Preview Cards */
+.pp-fp-right-col {
+  flex: 0 0 68%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.pp-fp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pp-fp-img-frame {
+  width: 100%;
+  aspect-ratio: 1 / 0.86;
+  background-color: #F8FAF6;
+  border: 1px solid #E0E7DE;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.pp-fp-img-frame:hover {
+  border-color: #9AAE82;
+  transform: translateY(-2px);
+}
+
+.pp-fp-plan-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Metadata underneath */
+.pp-fp-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.pp-fp-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: #294B43;
+  margin: 0 0 4px 0;
+  text-align: center;
+}
+
+.pp-fp-area {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #7C8580;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive Rules for Floor Plans */
+@media (max-width: 1200px) {
+  .pp-floorplans-container {
+    width: 90%;
+    gap: 4%;
+  }
+  .pp-fp-right-col {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 960px) {
+  .pp-floorplans-section {
+    padding: 50px 24px;
+  }
+  .pp-floorplans-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .pp-fp-left-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .pp-fp-description {
+    max-width: 100%;
+  }
+  .pp-fp-right-col {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .pp-fp-right-col {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pp-fp-card {
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* =========================================================================
+   SECTION 07 — SPECIFICATIONS: DESIGNED FOR COMFORT & QUALITY
+   Exact Reference recreation:
+   - Section background: #F1F4EE
+   - Main heading: #294B43
+   - Eyebrow: #71846C
+   - Item titles: #526B61
+   - Descriptions: #7C8580
+   - Icons: #748779
+   - Vertical divider: #D5DDD3
+   ========================================================================= */
+
+.pp-specifications-section {
+  width: 100%;
+  background-color: #F1F4EE;
+  padding: 65px 0 75px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-specifications-container {
+  width: 87%;
+  max-width: 1650px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6%;
+  box-sizing: border-box;
+}
+
+/* Left Column: Living Room Image (approx 40%) */
+.pp-sp-left-col {
+  flex: 0 0 40%;
+  display: flex;
+}
+
+.pp-sp-image-wrap {
+  width: 100%;
+  aspect-ratio: 1.17 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #E6EAE4;
+}
+
+.pp-sp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Right Column: Header & Specifications Grid (approx 60%) */
+.pp-sp-right-col {
+  flex: 0 0 54%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Header */
+.pp-sp-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.pp-sp-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #71846C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pp-sp-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(34px, 2.7vw, 44px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #294B43;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+/* 2-Column Specification Wrap */
+.pp-sp-grid-wrap {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  box-sizing: border-box;
+}
+
+.pp-sp-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* Vertical Column Divider */
+.pp-sp-divider {
+  width: 1px;
+  background-color: #D5DDD3;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* Item */
+.pp-sp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.pp-sp-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pp-sp-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.pp-sp-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-sp-title {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #526B61;
+  margin: 0 0 4px 0;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.pp-sp-desc {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #7C8580;
+  margin: 0;
+  text-align: left;
+}
+
+/* Responsive Rules for Specifications */
+@media (max-width: 1200px) {
+  .pp-specifications-container {
+    width: 90%;
+    gap: 4%;
+  }
+  .pp-sp-left-col {
+    flex: 0 0 42%;
+  }
+  .pp-sp-right-col {
+    flex: 0 0 54%;
+  }
+}
+
+@media (max-width: 960px) {
+  .pp-specifications-section {
+    padding: 50px 24px;
+  }
+  .pp-specifications-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .pp-sp-left-col {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .pp-sp-right-col {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .pp-sp-grid-wrap {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .pp-sp-divider {
+    display: none;
+  }
+}
+
 /* 2. PROJECT INTRODUCTION */
 .pp-intro {
   padding: 10rem 4rem;

@@ -138,7 +138,7 @@ const PeopleSection = () => {
           */
 
           gsap.set(rajeshCardRef.current, {
-            opacity: 0,
+            autoAlpha: 0,
             x: desktop ? -18 : 0,
             y: desktop ? 70 : 100,
             z: -500,
@@ -158,7 +158,7 @@ const PeopleSection = () => {
           });
 
           gsap.set(rajeshInfoRef.current, {
-            opacity: 0,
+            autoAlpha: 0,
             x: desktop ? 100 : 0,
             y: 30,
             z: 100,
@@ -173,7 +173,7 @@ const PeopleSection = () => {
           */
 
           gsap.set(nagaCardRef.current, {
-            opacity: 0,
+            autoAlpha: 0,
             x: desktop ? 18 : 0,
             y: desktop ? 80 : 100,
             z: -600,
@@ -193,7 +193,7 @@ const PeopleSection = () => {
           });
 
           gsap.set(nagaInfoRef.current, {
-            opacity: 0,
+            autoAlpha: 0,
             x: desktop ? -100 : 0,
             y: 30,
             z: 100,
@@ -208,7 +208,7 @@ const PeopleSection = () => {
           */
 
           gsap.set(convergenceRef.current, {
-            opacity: 0,
+            autoAlpha: 0,
             scale: 0.75,
             z: -500,
             rotateX: 10,
@@ -222,7 +222,7 @@ const PeopleSection = () => {
           });
 
           gsap.set(convergenceTextRef.current, {
-            opacity: 0,
+            autoAlpha: 0,
             y: 80,
             z: 150,
             force3D: true,
@@ -329,8 +329,8 @@ const PeopleSection = () => {
               x: desktop ? -12 : 0,
               y: -100,
               rotateY: desktop ? 8 : 0,
-              opacity: 0,
-              duration: 1.4,
+              autoAlpha: 0,
+              duration: 1.2,
               force3D: true,
             },
             1.4
@@ -342,7 +342,7 @@ const PeopleSection = () => {
               rotationX: desktop ? 58 : 44,
               y: -100,
               scale: 1.15,
-              duration: 1.4,
+              duration: 1.2,
             },
             1.4
           );
@@ -350,14 +350,14 @@ const PeopleSection = () => {
           /*
           ============================================================
           PHASE 03
-          RAJESH ENTERS FROM DEPTH
+          RAJESH ENTERS (FOUNDER 01)
           ============================================================
           */
 
           tl.to(
             rajeshCardRef.current,
             {
-              opacity: 1,
+              autoAlpha: 1,
               x: 0,
               y: 0,
               z: 0,
@@ -365,11 +365,11 @@ const PeopleSection = () => {
               rotateX: 0,
               rotateZ: 0,
               scale: 1,
-              duration: 1.8,
+              duration: 1.4,
               ease: "power3.out",
               force3D: true,
             },
-            2.2
+            2.6
           );
 
           tl.to(
@@ -377,17 +377,17 @@ const PeopleSection = () => {
             {
               scale: 1,
               xPercent: 0,
-              duration: 1.8,
+              duration: 1.4,
               ease: "power2.out",
               force3D: true,
             },
-            2.2
+            2.6
           );
 
           tl.to(
             rajeshInfoRef.current,
             {
-              opacity: 1,
+              autoAlpha: 1,
               x: 0,
               y: 0,
               z: 0,
@@ -396,7 +396,7 @@ const PeopleSection = () => {
               ease: "power3.out",
               force3D: true,
             },
-            2.8
+            2.9
           );
 
           tl.to(
@@ -406,87 +406,83 @@ const PeopleSection = () => {
               opacity: 0.4,
               duration: 1,
             },
-            2.5
+            2.8
           );
 
           /*
           ============================================================
           PHASE 04
-          RAJESH PARALLAX / CAMERA PASSES
+          RAJESH IN FOCUS — COMFORTABLE VIEWING HOLD
           ============================================================
           */
 
           tl.to(
             rajeshCardRef.current,
             {
-              y: -70,
-              rotateY: desktop ? -7 : 0,
-              rotateZ: desktop ? 1.5 : 0,
-              duration: 1.3,
+              y: -25,
+              duration: 2.2,
+              ease: "none",
               force3D: true,
             },
-            3.8
+            4.0
           );
 
           tl.to(
             rajeshImageRef.current,
             {
-              scale: 1.12,
-              xPercent: 4,
-              duration: 1.3,
+              scale: 1.04,
+              duration: 2.2,
+              ease: "none",
               force3D: true,
             },
-            3.8
-          );
-
-          tl.to(
-            rajeshInfoRef.current,
-            {
-              y: -40,
-              z: 80,
-              duration: 1.3,
-              force3D: true,
-            },
-            3.8
+            4.0
           );
 
           /*
           ============================================================
           PHASE 05
-          RAJESH EXITS / NAGA ENTERS FROM OPPOSITE AXIS
+          RAJESH EXITS COMPLETELY BEFORE NAGA ENTERS
           ============================================================
           */
 
           tl.to(
             rajeshCardRef.current,
             {
-              x: desktop ? -80 : 0,
-              y: -120,
-              z: -300,
-              rotateY: desktop ? 18 : 0,
-              rotateZ: desktop ? -4 : 0,
-              scale: 0.82,
-              opacity: 0,
-              duration: 1.5,
+              x: desktop ? -60 : 0,
+              y: -100,
+              z: -250,
+              scale: 0.85,
+              autoAlpha: 0,
+              duration: 1.0,
+              ease: "power2.in",
               force3D: true,
             },
-            4.8
+            6.2
           );
 
           tl.to(
             rajeshInfoRef.current,
             {
-              x: desktop ? -120 : 0,
-              opacity: 0,
-              duration: 1,
+              x: desktop ? -80 : 0,
+              autoAlpha: 0,
+              duration: 0.8,
+              ease: "power2.in",
+              force3D: true,
             },
-            4.8
+            6.2
           );
+
+          /*
+          ============================================================
+          PHASE 06
+          NAGA ENTERS (FOUNDER 02) — CLEAN STAGE, NO OVERLAP
+          ============================================================
+          */
 
           tl.to(
             nagaCardRef.current,
             {
-              opacity: 1,
+              autoAlpha: 1,
               x: 0,
               y: 0,
               z: 0,
@@ -494,11 +490,11 @@ const PeopleSection = () => {
               rotateX: 0,
               rotateZ: 0,
               scale: 1,
-              duration: 1.8,
+              duration: 1.4,
               ease: "power3.out",
               force3D: true,
             },
-            5
+            7.5
           );
 
           tl.to(
@@ -506,17 +502,17 @@ const PeopleSection = () => {
             {
               scale: 1,
               xPercent: 0,
-              duration: 1.8,
+              duration: 1.4,
               ease: "power2.out",
               force3D: true,
             },
-            5
+            7.5
           );
 
           tl.to(
             nagaInfoRef.current,
             {
-              opacity: 1,
+              autoAlpha: 1,
               x: 0,
               y: 0,
               z: 0,
@@ -525,82 +521,78 @@ const PeopleSection = () => {
               ease: "power3.out",
               force3D: true,
             },
-            5.5
-          );
-
-          /*
-          ============================================================
-          PHASE 06
-          NAGA CAMERA PASS
-          ============================================================
-          */
-
-          tl.to(
-            nagaCardRef.current,
-            {
-              y: -70,
-              rotateY: desktop ? 7 : 0,
-              rotateZ: desktop ? -1.5 : 0,
-              duration: 1.3,
-              force3D: true,
-            },
-            6.8
-          );
-
-          tl.to(
-            nagaImageRef.current,
-            {
-              scale: 1.12,
-              xPercent: -4,
-              duration: 1.3,
-              force3D: true,
-            },
-            6.8
-          );
-
-          tl.to(
-            nagaInfoRef.current,
-            {
-              y: -40,
-              z: 80,
-              duration: 1.3,
-              force3D: true,
-            },
-            6.8
+            7.8
           );
 
           /*
           ============================================================
           PHASE 07
-          BOTH FOUNDERS DISAPPEAR INTO BLUEPRINT
+          NAGA IN FOCUS — COMFORTABLE VIEWING HOLD
           ============================================================
           */
 
           tl.to(
             nagaCardRef.current,
             {
-              x: desktop ? 90 : 0,
-              y: -120,
-              z: -350,
-              rotateY: desktop ? -18 : 0,
-              rotateZ: desktop ? 4 : 0,
-              scale: 0.82,
-              opacity: 0,
-              duration: 1.5,
+              y: -25,
+              duration: 2.2,
+              ease: "none",
               force3D: true,
             },
-            7.8
+            8.9
+          );
+
+          tl.to(
+            nagaImageRef.current,
+            {
+              scale: 1.04,
+              duration: 2.2,
+              ease: "none",
+              force3D: true,
+            },
+            8.9
+          );
+
+          /*
+          ============================================================
+          PHASE 08
+          NAGA EXITS COMPLETELY
+          ============================================================
+          */
+
+          tl.to(
+            nagaCardRef.current,
+            {
+              x: desktop ? 60 : 0,
+              y: -100,
+              z: -250,
+              scale: 0.85,
+              autoAlpha: 0,
+              duration: 1.0,
+              ease: "power2.in",
+              force3D: true,
+            },
+            11.1
           );
 
           tl.to(
             nagaInfoRef.current,
             {
-              x: desktop ? 120 : 0,
-              opacity: 0,
-              duration: 1,
+              x: desktop ? 80 : 0,
+              autoAlpha: 0,
+              duration: 0.8,
+              ease: "power2.in",
+              force3D: true,
             },
-            7.8
+            11.1
           );
+
+          /*
+          ============================================================
+          PHASE 09
+          CONVERGENCE
+          ============================================================
+          */
 
           tl.to(
             blueprintRef.current,
@@ -608,30 +600,23 @@ const PeopleSection = () => {
               opacity: 1,
               scale: 0.8,
               rotationZ: 8,
-              duration: 1.4,
+              duration: 1.2,
             },
-            7.9
+            12.2
           );
-
-          /*
-          ============================================================
-          PHASE 08
-          CONVERGENCE
-          ============================================================
-          */
 
           tl.to(
             convergenceRef.current,
             {
-              opacity: 1,
+              autoAlpha: 1,
               scale: 1,
               z: 0,
               rotateX: 0,
-              duration: 1.8,
+              duration: 1.4,
               ease: "power3.out",
               force3D: true,
             },
-            8.6
+            12.4
           );
 
           tl.to(
@@ -639,41 +624,41 @@ const PeopleSection = () => {
             {
               rotateY: 0,
               rotateZ: 0,
-              duration: 1.4,
+              duration: 1.2,
               force3D: true,
             },
-            8.8
+            12.6
           );
 
           tl.to(
             convergenceTextRef.current,
             {
-              opacity: 1,
+              autoAlpha: 1,
               y: 0,
               z: 0,
-              duration: 1.3,
+              duration: 1.2,
               ease: "power3.out",
               force3D: true,
             },
-            9.2
+            12.8
           );
 
           /*
           ============================================================
-          PHASE 09
-          FINAL CINEMATIC CAMERA PUSH
+          PHASE 10
+          FINAL CINEMATIC CAMERA PUSH & HOLD
           ============================================================
           */
 
           tl.to(
             convergenceRef.current,
             {
-              scale: desktop ? 1.12 : 1.04,
+              scale: desktop ? 1.08 : 1.04,
               y: -20,
-              duration: 1.3,
+              duration: 1.5,
               force3D: true,
             },
-            10.2
+            14.0
           );
 
           tl.to(
@@ -683,9 +668,9 @@ const PeopleSection = () => {
               rotationX: desktop ? 50 : 38,
               y: 80,
               opacity: 0.25,
-              duration: 1.3,
+              duration: 1.5,
             },
-            10.2
+            14.0
           );
 
           tl.to(
@@ -694,12 +679,10 @@ const PeopleSection = () => {
               rotationZ: 25,
               scale: 1.15,
               opacity: 0.18,
-              duration: 1.3,
+              duration: 1.5,
             },
-            10.2
+            14.0
           );
-
-
 
           /*
           ============================================================
@@ -707,7 +690,7 @@ const PeopleSection = () => {
           ============================================================
           */
 
-          tl.to({}, { duration: 1.5 });
+          tl.to({}, { duration: 1.2 });
 
           requestAnimationFrame(() => {
             ScrollTrigger.refresh();

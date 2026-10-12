@@ -1,4 +1,5 @@
 import React, { useRef, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
@@ -111,18 +112,18 @@ const ContactSection = () => {
           <div className="c-info-col c-nav-links-col">
             <h4 className="c-label">NAVIGATION</h4>
             <nav className="c-nav-list">
-              <a href="#portfolio">PROJECTS</a>
-              <a href="#approach">PHILOSOPHY</a>
-              <a href="#about">ABOUT</a>
-              <a href="#contact">CONTACT</a>
+              <Link to="/projects/uma-sreenivas-lakeshore">PROJECTS</Link>
+              <Link to="/philosophy">PHILOSOPHY</Link>
+              <Link to="/about">ABOUT</Link>
+              <Link to="/contact">CONTACT</Link>
             </nav>
           </div>
 
           <div className="c-cta-wrapper">
-            <a href="#contact" className="c-premium-cta">
+            <Link to="/contact" className="c-premium-cta">
               <span className="cta-text">START A CONVERSATION</span>
               <ArrowUpRight className="cta-arrow" size={20} strokeWidth={1.5} />
-            </a>
+            </Link>
           </div>
         </div>
 

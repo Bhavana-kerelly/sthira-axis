@@ -1,0 +1,679 @@
+/* =========================================================================
+   PHILOSOPHY PAGE STYLING — PIXEL-PERFECT SPECIFICATION
+   Reference 1024px Viewport
+   ========================================================================= */
+
+.philosophy-page {
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #203F38;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================================
+   SECTION 1 — HERO SECTION
+   ========================================================================= */
+
+.ph-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 474px;
+  background-image: url('/images/philosophy_hero_bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 1. Slim Transparent Navigation Header */
+.ph-header {
+  width: 100%;
+  height: 102px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 38px 70px 0 70px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.ph-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.ph-logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.ph-logo-img {
+  width: 145px;
+  height: auto;
+  display: block;
+}
+
+/* Elongated, rounded, translucent dark grey-green navigation capsule */
+.ph-nav-capsule {
+  width: 393px;
+  height: 39px;
+  background: rgba(50, 67, 65, 0.72);
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ph-nav-link {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.ph-nav-link:hover {
+  opacity: 0.85;
+}
+
+/* Active navigation item underline */
+.ph-nav-link-active {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.ph-active-indicator {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 74px;
+  height: 3px;
+  background-color: #B9C94B;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* 2. Hero Content Area */
+.ph-hero-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 55px 77px;
+  box-sizing: border-box;
+}
+
+.ph-hero-content-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 29px;
+}
+
+/* Thin vertical accent line */
+.ph-hero-accent-line {
+  width: 1px;
+  height: 224px;
+  background-color: #B9C94B;
+  flex-shrink: 0;
+}
+
+/* Text group */
+.ph-hero-text-group {
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ph-hero-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #617A43;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.ph-hero-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #29463D;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.ph-hero-description {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #555B58;
+  margin-top: 24px;
+  margin-bottom: 0;
+  max-width: 335px;
+  text-align: left;
+}
+
+/* =========================================================================
+   SECTION 2 — OUR VISION & OUR MISSION
+   ========================================================================= */
+
+.ph-vision-mission-section {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 85px 0 90px 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ph-vm-container {
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 65px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  column-gap: 85px;
+  align-items: center;
+}
+
+/* LEFT COLUMN: Architectural Photograph */
+.ph-vm-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ph-arch-frame {
+  position: relative;
+  width: 420px;
+  height: 410px;
+  border-radius: 6px;
+  overflow: visible; /* Allows the green overlap card to extend out */
+}
+
+.ph-arch-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Overlapping forest-green panel */
+.ph-overlap-card {
+  position: absolute;
+  right: -25px;
+  bottom: 0;
+  width: 154px;
+  height: 158px;
+  background-color: #294A3C;
+  border-radius: 8px;
+  padding: 22px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.ph-overlap-text {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: left;
+}
+
+.ph-overlap-accent-bar {
+  width: 26px;
+  height: 2.5px;
+  background-color: #C4CC54;
+  border-radius: 1px;
+}
+
+/* RIGHT COLUMN: Vision & Mission Content */
+.ph-vm-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* OUR VISION BLOCK */
+.ph-vision-block {
+  margin-bottom: 42px;
+}
+
+.ph-block-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #627B43;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.ph-block-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 35px;
+  color: #203F38;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.ph-block-desc {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #686868;
+  margin-top: 16px;
+  margin-bottom: 0;
+  max-width: 380px;
+  text-align: left;
+}
+
+/* OUR MISSION BLOCK with Vertical Accent Line */
+.ph-mission-block-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+}
+
+.ph-mission-accent-line {
+  width: 2px;
+  height: 160px;
+  background-color: #71834E;
+  flex-shrink: 0;
+}
+
+.ph-mission-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ph-mission-heading {
+  font-size: 30px;
+  line-height: 34px;
+  white-space: nowrap;
+}
+
+.ph-mission-desc {
+  margin-top: 15px;
+  max-width: 385px;
+  font-size: 14.5px;
+  line-height: 23px;
+}
+
+/* =========================================================================
+   SECTION 3 — OUR VALUES
+   ========================================================================= */
+
+.ph-values-section {
+  width: 100%;
+  background-color: #F4F6F0;
+  min-height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 0 68px 0;
+  box-sizing: border-box;
+}
+
+.ph-values-container {
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 78px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Heading Block */
+.ph-values-header {
+  width: 270px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ph-values-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #627B43;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.ph-values-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 42px;
+  color: #29473D;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+/* Four-column layout */
+.ph-values-grid {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.ph-value-divider {
+  width: 1px;
+  height: 125px;
+  background-color: #D9DED2;
+  flex-shrink: 0;
+  margin: 0 26px;
+}
+
+.ph-value-item {
+  width: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ph-value-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.ph-value-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.ph-value-title {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: #203F38;
+  margin: 0 0 14px 0;
+  text-align: left;
+}
+
+.ph-value-desc {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #686868;
+  margin: 0;
+  text-align: left;
+}
+
+/* =========================================================================
+   SECTION 4 — OUR PHILOSOPHY IN ACTION
+   ========================================================================= */
+
+.ph-action-section {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  background-image: url('/images/philosophy_action_bg.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ph-action-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(19, 35, 29, 0.22);
+  z-index: 1;
+}
+
+.ph-action-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 78px 0 110px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left-side Text Group */
+.ph-action-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.ph-action-eyebrow {
+  display: block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #F4F4EF;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.ph-action-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 44px;
+  color: #F7F6ED;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+/* Right-side Supporting Paragraph */
+.ph-action-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.ph-action-divider {
+  width: 1.5px;
+  height: 110px;
+  background-color: #C4CC54;
+  flex-shrink: 0;
+}
+
+.ph-action-desc {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #F1F1EB;
+  max-width: 360px;
+  margin: 0;
+  text-align: left;
+}
+
+/* =========================================================================
+   RESPONSIVE STYLES
+   ========================================================================= */
+
+@media (max-width: 1024px) {
+  .ph-header {
+    padding: 30px 40px 0 40px;
+  }
+  .ph-hero-body {
+    padding-left: 50px;
+  }
+  .ph-vm-container {
+    padding: 0 50px;
+    column-gap: 60px;
+  }
+  .ph-values-container {
+    padding: 0 50px;
+  }
+  .ph-value-divider {
+    margin: 0 16px;
+  }
+  .ph-action-container {
+    padding: 0 50px 0 80px;
+  }
+}
+
+@media (max-width: 860px) {
+  .ph-vm-container {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    padding: 0 40px;
+  }
+  .ph-vm-left {
+    justify-content: center;
+  }
+  .ph-arch-frame {
+    max-width: 100%;
+  }
+  .ph-vm-right {
+    align-items: flex-start;
+  }
+  .ph-values-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 0 40px;
+  }
+  .ph-values-grid {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .ph-action-container {
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ph-hero-section {
+    min-height: auto;
+  }
+  .ph-header {
+    padding: 24px 20px 0 20px;
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .ph-nav-capsule {
+    width: 100%;
+    max-width: 360px;
+    padding: 0 16px;
+  }
+  .ph-hero-body {
+    padding: 30px 20px 40px 20px;
+  }
+  .ph-hero-content-wrapper {
+    gap: 18px;
+  }
+  .ph-hero-accent-line {
+    height: 180px;
+  }
+  .ph-hero-heading {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .ph-vm-container {
+    padding: 0 20px;
+  }
+  .ph-arch-frame {
+    width: 100%;
+    max-width: 340px;
+    height: 320px;
+  }
+  .ph-overlap-card {
+    right: 0;
+    bottom: -15px;
+  }
+  .ph-mission-heading {
+    white-space: normal;
+  }
+  .ph-values-section {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+  .ph-values-container {
+    padding: 0;
+  }
+  .ph-values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+  .ph-value-divider {
+    display: none;
+  }
+  .ph-value-item {
+    width: auto;
+  }
+  .ph-action-section {
+    min-height: auto;
+    padding: 45px 20px;
+  }
+  .ph-action-container {
+    padding: 0;
+    gap: 25px;
+  }
+  .ph-action-heading {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}

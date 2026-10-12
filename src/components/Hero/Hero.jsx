@@ -22,9 +22,22 @@ const Hero = () => {
     const video = videoRef.current;
     if (!video) return;
 
+    let minTimerDone = false;
+    let metaDone = false;
+
+    const timer = setTimeout(() => {
+      minTimerDone = true;
+      if (metaDone) {
+        setIsVideoLoaded(true);
+      }
+    }, 2000);
+
     const handleLoadedMetadata = () => {
       setVideoDuration(video.duration);
-      setIsVideoLoaded(true);
+      metaDone = true;
+      if (minTimerDone) {
+        setIsVideoLoaded(true);
+      }
     };
 
     if (video.readyState >= 1) {
@@ -34,6 +47,7 @@ const Hero = () => {
     }
 
     return () => {
+      clearTimeout(timer);
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
     };
   }, []);
@@ -139,7 +153,11 @@ const Hero = () => {
     <>
       {!isVideoLoaded && (
         <div className="hero-loading">
-          <div className="loading-text">STHIRA AXIS INFRA</div>
+          <img 
+            src="/images/logo.png" 
+            alt="Sthira Axis Infra" 
+            className="loading-logo-img" 
+          />
         </div>
       )}
       <section className="hero-container" ref={containerRef}>

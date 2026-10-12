@@ -39,9 +39,7 @@ const ApproachSection = () => {
 
       gsap.set(headlineRef.current.children, {
         opacity: 0,
-        x: -100,
-        z: -300,
-        rotateY: 18,
+        x: -60,
       });
 
       gsap.set(cards, {
@@ -97,8 +95,6 @@ const ApproachSection = () => {
         {
           opacity: 1,
           x: 0,
-          z: 0,
-          rotateY: 0,
           stagger: 0.16,
           duration: 1.4,
           ease: 'power4.out',
@@ -206,9 +202,7 @@ const ApproachSection = () => {
       tl.to(
         headlineRef.current,
         {
-          x: -35,
-          z: 80,
-          rotateY: -4,
+          x: -25,
           duration: 4,
           ease: 'none',
         },

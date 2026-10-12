@@ -6,52 +6,123 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 4rem;
-  z-index: 100;
-  mix-blend-mode: normal;
-  /* Optional: subtle readability gradient at the top of the body/hero to make nav readable */
+  padding: 30px 60px;
+  box-sizing: border-box;
+  z-index: 1000;
+  pointer-events: none; /* Allows clicks to pass through empty bar space */
 }
 
-.navbar-brand {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  color: var(--color-ivory); /* Using ivory to stand out against video */
-  text-transform: uppercase;
-}
-
-.navbar-links {
-  display: flex;
-  gap: 3rem;
-  background: rgba(8, 8, 8, 0.3); /* Lighter brand dark with transparency */
-  padding: 0.8rem 1.8rem;
-  border-radius: 40px;
+/* Brand Logo Pill Chip */
+.navbar-brand-chip {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(50, 67, 65, 0.78);
+  border-radius: 28px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 24px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-.navbar-links a {
-  font-family: var(--font-sans);
+.navbar-brand-chip:hover {
+  transform: translateY(-1px);
+  background: rgba(50, 67, 65, 0.88);
+}
+
+.navbar-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Nav Links Pill Chip */
+.navbar-links-chip {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: rgba(50, 67, 65, 0.78);
+  border-radius: 28px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 48px;
+  padding: 0 32px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.nav-chip-link {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12.5px;
   font-weight: 500;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  color: var(--color-ivory);
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
   text-decoration: none;
   text-transform: uppercase;
-  transition: opacity 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
-.navbar-links a:hover {
-  opacity: 0.7;
+.nav-chip-link:hover {
+  opacity: 0.82;
 }
 
-@media (max-width: 768px) {
+.nav-chip-active {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.nav-chip-indicator {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4px);
+  height: 3px;
+  background-color: #D3BE39;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
   .navbar {
-    padding: 1.5rem 1.5rem;
+    padding: 20px 24px;
   }
-  .navbar-links {
-    display: none; /* Minimal on mobile for now */
+  .navbar-links-chip {
+    gap: 20px;
+    padding: 0 20px;
+    height: 44px;
+  }
+  .nav-chip-link {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .navbar-links-chip {
+    width: 100%;
+    justify-content: space-around;
+    padding: 0 16px;
+    height: 42px;
+  }
+  .nav-chip-link {
+    font-size: 10px;
   }
 }

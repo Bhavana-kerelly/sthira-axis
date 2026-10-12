@@ -1,11 +1,19 @@
 .hero-loading {
   position: fixed;
   inset: 0;
-  background-color: var(--color-ivory);
+  background-color: #13231D; /* Brand deep forest dark green */
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.loading-logo-img {
+  width: 240px;
+  max-width: 80vw;
+  height: auto;
+  display: block;
+  animation: pulse 1.8s infinite ease-in-out;
 }
 
 .loading-text {
