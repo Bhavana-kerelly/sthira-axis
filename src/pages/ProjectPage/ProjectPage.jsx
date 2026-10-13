@@ -24,33 +24,21 @@ const ProjectPage = () => {
   const galleryImages = [
     {
       id: 1,
-      src: '/images/uma_lakeshore.jpg',
-      alt: 'Uma Sreenivas Lakeshore - Waterfront Luxury Residences',
-      title: 'Waterfront Residences'
+      src: '/images/floorplan_type_a.png',
+      alt: 'Uma Sreenivas Lakeshore - Type A Residence Floor Plan (2,350 sq ft)',
+      title: 'Type A Residence (2,350 sq ft)'
     },
     {
       id: 2,
-      src: '/images/project_gallery_1.jpg',
-      alt: 'Uma Sreenivas Lakeshore - Balcony Terrace with sunset view',
-      title: 'Balcony Terrace'
+      src: '/images/floorplan_type_b.png',
+      alt: 'Uma Sreenivas Lakeshore - Type B Residence Floor Plan (2,271 sq ft)',
+      title: 'Type B Residence (2,271 sq ft)'
     },
     {
       id: 3,
-      src: '/images/about_hero_pool.jpg',
-      alt: 'Uma Sreenivas Lakeshore - Landscaped Clubhouse and Amenities Pool',
-      title: 'Landscaped Amenities & Pool'
-    },
-    {
-      id: 4,
-      src: '/images/architecture_editorial.jpg',
-      alt: 'Uma Sreenivas Lakeshore - Architectural Facade Details',
-      title: 'Architectural Details'
-    },
-    {
-      id: 5,
-      src: '/images/project_wide.jpg',
-      alt: 'Uma Sreenivas Lakeshore - Scenic Master View',
-      title: 'Scenic Panorama'
+      src: '/images/floorplan_type_c.png',
+      alt: 'Uma Sreenivas Lakeshore - Type C Residence Floor Plan (2,150 sq ft)',
+      title: 'Type C Residence (2,150 sq ft)'
     }
   ];
 
@@ -111,7 +99,7 @@ const ProjectPage = () => {
       {/* 1. HERO SECTION */}
       <section className="pp-hero" id="overview">
         <div className="pp-hero-img-wrapper">
-          <img src="/images/uma_sreenivas_lakeshore.jpg" alt="Uma Sreenivas Lakeshore" className="pp-hero-img-inner" />
+          <img src="/images/project_hero.jpg" alt="Uma Sreenivas Lakeshore" className="pp-hero-img-inner" />
           <div className="pp-hero-overlay"></div>
         </div>
         <div className="pp-hero-content">
